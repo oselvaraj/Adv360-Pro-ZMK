@@ -31,15 +31,6 @@
         };
     };
 
-    macros {
-        ps_select_all: ps_select_all {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(A)>;
-            label = "PS_SELECT_ALL";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -85,11 +76,11 @@
 
         layer_ps {
             bindings = <
-&trans  &trans          &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans  &none                                       &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &ps_select_all  &trans  &trans  &trans  &trans  &none   &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans  &trans  &trans  &trans  &none                                       &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &mkp MB1  &trans  &trans  &trans  &trans  &none   &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
