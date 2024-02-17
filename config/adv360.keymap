@@ -76,11 +76,11 @@
 
         layer_ps {
             bindings = <
-&trans  &trans     &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans  &trans  &trans  &trans  &none                                       &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &mkp LCLK  &trans  &trans  &trans  &trans  &none   &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans         &trans     &trans     &trans     &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans         &trans     &trans     &trans     &none                                       &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &none   &trans         &trans     &trans     &trans     &none   &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LC(Z)      &kp LC(X)  &kp LC(C)  &kp LC(V)                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LC(LS(Z))  &trans     &trans                &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
