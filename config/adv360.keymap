@@ -76,11 +76,11 @@
 
         layer_ps {
             bindings = <
-&trans  &kp N0  &kp NUMBER_1   &kp LS(N0)        &kp RS(NUMBER_1)   &kp UP_ARROW    &trans                                         &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans         &trans            &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp X   &kp D          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp J           &none      &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LC(Z)      &kp LC(X)         &kp LC(C)          &kp LC(V)                          &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LC(LS(Z))  &trans            &trans                             &trans     &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&kp LC(LA(LS(W)))  &kp N0  &kp NUMBER_1   &kp LS(N0)        &kp RS(NUMBER_1)   &kp UP_ARROW    &trans                                         &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LC(S)          &trans  &trans         &trans            &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans             &kp X   &kp D          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp J           &kp LC(N)  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans             &trans  &kp LC(Z)      &kp LC(X)         &kp LC(C)          &kp LC(V)                          &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans             &trans  &kp LC(LS(Z))  &trans            &trans                             &trans     &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
