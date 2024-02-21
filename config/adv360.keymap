@@ -31,15 +31,24 @@
         };
     };
 
+    macros {
+        windows_click_lock: windows_click_lock {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(R) &kp LS(C) &kp COLON &kp BSLH &kp LS(U) &kp S &kp E &kp R &kp S &kp BSLH &kp O &kp M &kp P &kp R &kp A &kp BSLH &kp LS(D) &kp E &kp S &kp K &kp T &kp O &kp P &kp BSLH &kp C &kp L &kp I &kp C &kp K &kp L &kp O &kp C &kp K &kp DOT &kp V &kp B &kp S &kp ENTER>;
+            label = "WINDOWS_CLICK_LOCK";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
 &kp EQUAL  &kp N1     &kp N2    &kp N3        &kp N4    &kp N5  &tog 1                                                              &mo 3     &kp N6  &kp N7    &kp N8     &kp N9     &kp N0    &kp MINUS
-&kp TAB    &kp Q      &kp W     &kp E         &kp R     &kp T   &kp LA(TAB)                                                         &none     &kp Y   &kp U     &kp I      &kp O      &kp P     &kp BSLH
+&kp TAB    &kp Q      &kp W     &kp E         &kp R     &kp T   &kp LA(TAB)                                                         &to 5     &kp Y   &kp U     &kp I      &kp O      &kp P     &kp BSLH
 &kp ESC    &kp A      &kp S     &kp D         &kp F     &kp G   &kp LA(LS(TAB))  &kp LCTRL  &kp LALT           &kp LGUI  &kp RCTRL  &tog 4    &kp H   &kp J     &kp K      &kp L      &kp SEMI  &kp SQT
-&kp LSHFT  &kp FSLH   &kp Z     &kp X         &kp C     &kp V                               &kp PAGE_UP        &kp HOME                       &kp B   &kp N     &kp M      &kp COMMA  &kp DOT   &kp RSHFT
+&kp LSHFT  &kp SLASH  &kp Z     &kp X         &kp C     &kp V                               &kp PAGE_UP        &kp HOME                       &kp B   &kp N     &kp M      &kp COMMA  &kp DOT   &kp RSHFT
 &mo 2      &kp GRAVE  &kp CAPS  &kp UP_ARROW  &kp DOWN          &kp SPACE        &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL    &kp BSPC          &kp LEFT  &kp RIGHT  &kp LBKT   &kp RBKT  &mo 2
             >;
         };
@@ -86,11 +95,11 @@
 
         control_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans               &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans               &trans  &trans  &trans  &trans  &trans                                      &to 0   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LC(A)            &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &windows_click_lock  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans               &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
