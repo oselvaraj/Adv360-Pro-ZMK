@@ -95,11 +95,11 @@
 
         control_layer {
             bindings = <
-&trans  &trans               &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans               &trans  &trans  &trans  &trans  &trans                                      &to 0   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(A)            &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &windows_click_lock  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans               &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans               &trans    &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans               &trans    &trans  &trans  &trans  &trans                                      &to 0   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LC(A)            &trans    &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &windows_click_lock  &trans    &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans               &mkp MB1  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
