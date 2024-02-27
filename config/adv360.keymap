@@ -37,7 +37,34 @@
             #binding-cells = <0>;
             bindings = <&mkp MB2>, <&mkp MB3>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <1200>;
+        };
+
+        shift_layer: shift_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHIFT_LAYER";
+            bindings = <&kp>, <&tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+        };
+
+        rightclick_grave: rightclick_grave {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RIGHTCLICK_GRAVE";
+            bindings = <&right_middle_click>, <&kp GRAVE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        click_caps: click_caps {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CLICK_CAPS";
+            bindings = <&mkp MB1>, <&kp CAPSLOCK>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
         };
     };
 
@@ -55,11 +82,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL  &kp N1               &kp N2        &kp N3    &kp N4    &kp N5  &tog 1                                                          &mo 3     &kp N6  &kp N7    &kp N8     &kp N9     &kp N0    &kp MINUS
-&kp TAB    &kp Q                &kp W         &kp E     &kp R     &kp T   &kp TAB                                                         &none     &kp Y   &kp U     &kp I      &kp O      &kp SQT   &kp BSLH
-&kp ESC    &kp A                &kp S         &kp D     &kp F     &kp G   &kp LS(TAB)  &kp LCTRL  &kp LALT           &kp LGUI  &kp RCTRL  &tog 4    &kp H   &kp J     &kp K      &kp L      &kp P     &kp SEMICOLON
-&kp LSHFT  &kp SLASH            &kp Z         &kp X     &kp C     &kp V                           &kp PAGE_UP        &kp HOME                       &kp B   &kp N     &kp M      &kp COMMA  &kp DOT   &kp RSHFT
-&to 5      &right_middle_click  &kp UP_ARROW  &mkp MB1  &kp DOWN          &kp SPACE    &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL    &kp BSPC          &kp LEFT  &kp RIGHT  &kp LBKT   &kp RBKT  &mo 3
+&kp EQUAL                  &kp N1             &kp N2        &kp N3       &kp N4    &kp N5  &tog 1                                                                  &mo 3            &kp N6  &kp N7    &kp N8     &kp N9     &kp N0    &kp MINUS
+&kp TAB                    &kp Q              &kp W         &kp E        &kp R     &kp T   &kp TAB                                                                 &kp PRINTSCREEN  &kp Y   &kp U     &kp I      &kp O      &kp SQT   &kp BSLH
+&kp ESC                    &kp A              &kp S         &kp D        &kp F     &kp G   &kp LS(TAB)  &kp LCTRL  &kp LALT           &kp LGUI  &sk RIGHT_CONTROL  &tog 4           &kp H   &kp J     &kp K      &kp L      &kp P     &kp SEMICOLON
+&shift_layer LEFT_SHIFT 6  &kp SLASH          &kp Z         &kp X        &kp C     &kp V                           &kp PAGE_UP        &kp HOME                                      &kp B   &kp N     &kp M      &kp COMMA  &kp DOT   &kp RSHFT
+&tog 5                     &rightclick_grave  &kp UP_ARROW  &click_caps  &kp DOWN          &kp SPACE    &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL            &kp BSPC                 &kp LEFT  &kp RIGHT  &kp LBKT   &kp RBKT  &mo 3
             >;
         };
 
@@ -95,21 +122,31 @@
 
         layer_ps {
             bindings = <
-&kp LC(S)       &kp N0                &kp NUMBER_1   &kp LS(N0)         &kp RS(NUMBER_1)   &kp UP_ARROW    &kp LC(T)                                                    &trans  &trans  &trans  &trans  &trans             &trans  &trans
-&kp LC(A)       &kp LC(D)             &kp LC(I)      &kp LS(LA(LC(E)))  &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT                                                    &trans  &trans  &trans  &trans  &kp LS(LA(LC(W)))  &trans  &trans
-&kp ESCAPE      &kp X                 &kp D          &kp LEFT_BRACKET   &kp RIGHT_BRACKET  &kp LC(J)       &kp LC(N)  &kp LCTRL  &kp LEFT_ALT           &trans  &trans  &trans  &trans  &trans  &trans  &trans             &trans  &trans
-&kp LEFT_SHIFT  &kp NON_US_BACKSLASH  &kp LC(Z)      &kp LC(X)          &kp LC(C)          &kp LC(V)                             &kp LC(LA(LS(G)))      &trans                  &trans  &trans  &trans  &trans             &trans  &trans
-&kp B           &kp TILDE             &kp LC(LS(Z))  &kp MINUS          &kp PLUS                           &kp SPACE  &kp ENTER  &kp DEL                &trans  &trans  &trans          &trans  &trans  &trans             &trans  &trans
+&kp LC(S)       &kp N0                &kp NUMBER_1   &kp LS(N0)         &kp RS(NUMBER_4)   &kp UP_ARROW    &kp LC(T)                                                        &trans  &trans  &trans  &trans  &trans             &trans  &trans
+&kp LC(A)       &kp LC(D)             &kp LC(I)      &kp LS(LA(LC(E)))  &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT                                                        &trans  &trans  &trans  &trans  &kp LS(LA(LC(W)))  &trans  &trans
+&kp ESCAPE      &kp X                 &kp D          &kp LEFT_BRACKET   &kp RIGHT_BRACKET  &kp LC(J)       &kp LC(LS(N))  &kp LCTRL  &kp LEFT_ALT           &trans  &trans  &trans  &trans  &trans  &trans  &trans             &trans  &trans
+&kp LEFT_SHIFT  &kp NON_US_BACKSLASH  &kp LC(Z)      &kp LC(X)          &kp LC(C)          &kp LC(V)                                 &kp LC(LA(LS(G)))      &trans                  &trans  &trans  &trans  &trans             &trans  &trans
+&kp B           &kp TILDE             &kp LC(LS(Z))  &kp MINUS          &kp PLUS                           &kp SPACE      &kp ENTER  &kp DEL                &trans  &trans  &trans          &trans  &trans  &trans             &trans  &trans
             >;
         };
 
         control_layer {
             bindings = <
-&trans  &trans               &trans     &trans     &trans     &trans     &trans                                      &trans  &trans  &trans        &trans    &trans    &trans     &trans
-&trans  &trans               &trans     &trans     &trans     &trans     &trans                                      &none   &trans  &trans        &trans    &trans    &trans     &trans
-&trans  &kp LC(A)            &kp LC(S)  &kp LC(D)  &trans     &trans     &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans        &trans    &trans    &kp LC(P)  &trans
-&trans  &windows_click_lock  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)                  &trans      &trans                  &trans  &trans        &trans    &trans    &trans     &trans
-&to 0   &kp GRAVE            &kp CAPS   &trans     &trans                &trans  &trans  &trans      &trans  &trans  &trans          &kp UP_ARROW  &mkp MB1  &kp DOWN  &mkp MB2   &trans
+&trans  &trans               &trans     &trans     &trans     &trans     &trans                                      &trans  &trans  &trans     &trans  &trans     &trans     &trans
+&trans  &trans               &trans     &trans     &trans     &trans     &trans                                      &none   &trans  &kp LC(Y)  &trans  &kp LC(O)  &trans     &trans
+&trans  &kp LC(A)            &kp LC(S)  &kp LC(D)  &trans     &trans     &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans     &trans  &trans     &kp LC(P)  &trans
+&trans  &windows_click_lock  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)                  &trans      &trans                  &trans  &trans     &trans  &trans     &trans     &trans
+&trans  &trans               &trans     &trans     &trans                &trans  &trans  &trans      &trans  &trans  &trans          &trans     &trans  &trans     &trans     &trans
+            >;
+        };
+
+        mirror {
+            bindings = <
+&trans  &trans            &trans             &trans          &trans     &trans  &trans                                      &trans  &trans  &trans        &trans       &trans          &trans             &trans
+&trans  &trans            &trans             &trans          &trans     &trans  &trans                                      &trans  &trans  &trans        &trans       &trans          &trans             &trans
+&trans  &trans            &trans             &trans          &trans     &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans        &trans       &trans          &trans             &trans
+&trans  &trans            &trans             &trans          &trans     &trans                  &trans      &trans                  &trans  &trans        &trans       &trans          &trans             &trans
+&trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_ARROW  &kp RIGHT          &trans  &trans  &trans      &trans  &trans  &trans          &kp UP_ARROW  &click_caps  &kp DOWN_ARROW  &rightclick_grave  &trans
             >;
         };
     };
