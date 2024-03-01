@@ -70,16 +70,16 @@
         tab_or_click: tab_or_click {
             compatible = "zmk,behavior-mod-morph";
             label = "TAB_OR_CLICK";
-            bindings = <&mkp MB1>, <&kp LA(TAB)>;
+            bindings = <&mkp MB1>, <&kp LG(TAB)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
-        right_click_or_shift_tab: right_click_or_shift_tab {
+        right_click_or_desktop: right_click_or_desktop {
             compatible = "zmk,behavior-mod-morph";
-            label = "RIGHT_CLICK_OR_SHIFT_TAB";
-            bindings = <&right_middle_click>, <&kp LS(LA(TAB))>;
+            label = "RIGHT_CLICK_OR_DESKTOP";
+            bindings = <&right_middle_click>, <&kp LG(D)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
@@ -102,6 +102,8 @@
             bindings = <&kp BACKSPACE>;
             key-positions = <41 42>;
             layers = <0 6>;
+            slow-release;
+            timeout-ms = <1000>;
         };
 
         enter {
@@ -116,11 +118,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL                  &kp N1             &kp N2        &kp N3       &kp N4    &kp N5  &tog 1                                                                               &mo 3     &kp N6  &kp N7    &kp N8     &kp N9     &kp N0    &kp MINUS
-&kp TAB                    &kp Q              &kp W         &kp E        &kp R     &kp T   &right_click_or_shift_tab                                                            &tog 2    &kp Y   &kp U     &kp I      &kp O      &kp SQT   &kp BSLH
-&kp ESC                    &kp A              &kp S         &kp D        &kp F     &kp G   &tab_or_click              &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tog 4    &kp H   &kp J     &kp K      &kp L      &kp P     &kp SEMICOLON
-&shift_layer LEFT_SHIFT 6  &kp SLASH          &kp Z         &kp X        &kp C     &kp V                                         &kp PAGE_UP        &kp HOME                              &kp B   &kp N     &kp M      &kp COMMA  &kp DOT   &kp BACKSPACE
-&tog 5                     &rightclick_grave  &kp UP_ARROW  &click_caps  &kp DOWN          &kp SPACE                  &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &kp BSPC          &kp LEFT  &kp RIGHT  &kp LBKT   &kp RBKT  &mo 2
+&kp EQUAL                  &kp N1             &kp N2        &kp N3       &kp N4    &kp N5  &tog 1                                                                             &mo 3     &kp N6  &kp N7    &kp N8     &kp N9     &kp N0    &kp MINUS
+&kp TAB                    &kp Q              &kp W         &kp E        &kp R     &kp T   &right_click_or_desktop                                                            &tog 2    &kp Y   &kp U     &kp I      &kp O      &kp SQT   &kp BSLH
+&kp ESC                    &kp A              &kp S         &kp D        &kp F     &kp G   &tab_or_click            &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tog 4    &kp H   &kp J     &kp K      &kp L      &kp P     &kp SEMICOLON
+&shift_layer LEFT_SHIFT 6  &kp SLASH          &kp Z         &kp X        &kp C     &kp V                                       &kp PAGE_UP        &kp HOME                              &kp B   &kp N     &kp M      &kp COMMA  &kp DOT   &kp BACKSPACE
+&tog 5                     &rightclick_grave  &kp UP_ARROW  &click_caps  &kp DOWN          &kp SPACE                &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &kp BSPC          &kp LEFT  &kp RIGHT  &kp LBKT   &kp RBKT  &mo 2
             >;
         };
 
