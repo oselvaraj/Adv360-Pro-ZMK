@@ -70,7 +70,7 @@
         tab_or_click: tab_or_click {
             compatible = "zmk,behavior-mod-morph";
             label = "TAB_OR_CLICK";
-            bindings = <&mkp MB1>, <&kp TAB>;
+            bindings = <&mkp MB1>, <&kp LA(TAB)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
@@ -79,7 +79,7 @@
         right_click_or_shift_tab: right_click_or_shift_tab {
             compatible = "zmk,behavior-mod-morph";
             label = "RIGHT_CLICK_OR_SHIFT_TAB";
-            bindings = <&right_middle_click>, <&kp LS(TAB)>;
+            bindings = <&right_middle_click>, <&kp LS(LA(TAB))>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
