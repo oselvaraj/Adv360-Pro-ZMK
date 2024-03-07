@@ -4,9 +4,11 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: refil
       url-base: https://github.com/refil
+    - name: oselvaraj
+      url-base: https://github.com/oselvaraj
   projects:
     - name: zmk
-      remote: refil
+      remote: oselvaraj
       revision: adv360-z3.2-3
       import: app/west.yml
   self:
