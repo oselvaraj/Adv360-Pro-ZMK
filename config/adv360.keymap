@@ -119,6 +119,7 @@
             bindings = <&kp ENTER>;
             key-positions = <43 44>;
             layers = <0 5>;
+            timeout-ms = <1000>;
         };
     };
 
@@ -127,11 +128,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL                          &kp N1             &kp N2        &kp N3       &kp N4    &kp N5  &tog 1                                                                             &mo 3                &kp N6  &kp N7    &kp N8     &kp N9     &kp N0    &kp MINUS
-&kp TAB                            &kp Q              &kp W         &kp E        &kp R     &kp T   &right_click_or_desktop                                                            &right_middle_click  &kp Y   &kp U     &kp I      &kp O      &kp SQT   &kp BSLH
-&kp ESC                            &kp A              &kp S         &kp D        &kp F     &kp G   &tab_or_click            &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &click_or_ps_layer   &kp H   &kp J     &kp K      &kp L      &kp P     &kp SEMICOLON
-&tap_layer_hold_kp LEFT_SHIFT 5    &kp SLASH          &kp Z         &kp X        &kp C     &kp V                                       &kp PAGE_UP        &kp HOME                                         &kp B   &kp N     &kp M      &kp COMMA  &kp DOT   &kp BACKSPACE
-&tap_layer_hold_kp LEFT_CONTROL 6  &rightclick_grave  &kp UP_ARROW  &click_caps  &kp DOWN          &kp SPACE                &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &kp BSPC                     &kp LEFT  &kp RIGHT  &kp LBKT   &kp RBKT  &mo 2
+&kp EQUAL                          &kp N1             &kp N2        &kp N3       &kp N4    &kp N5  &tog 1                                                                             &mo 3                &kp N6  &kp N7    &kp N8            &kp N9     &kp N0    &kp MINUS
+&kp TAB                            &kp Q              &kp W         &kp E        &kp R     &kp T   &right_click_or_desktop                                                            &right_middle_click  &kp Y   &kp U     &kp I             &kp O      &kp SQT   &kp BSLH
+&kp ESC                            &kp A              &kp S         &kp D        &kp F     &kp G   &tab_or_click            &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &click_or_ps_layer   &kp H   &kp J     &kp K             &kp L      &kp P     &kp SEMICOLON
+&tap_layer_hold_kp LEFT_SHIFT 5    &kp SLASH          &kp Z         &kp X        &kp C     &kp V                                       &kp PAGE_UP        &kp HOME                                         &kp B   &kp N     &kp M             &kp COMMA  &kp DOT   &kp BACKSPACE
+&tap_layer_hold_kp LEFT_CONTROL 6  &rightclick_grave  &kp UP_ARROW  &click_caps  &kp DOWN          &kp SPACE                &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &kp BSPC                     &kp LEFT  &kp LEFT_BRACKET  &kp RIGHT  &kp RBKT  &mo 2
             >;
         };
 
@@ -177,21 +178,21 @@
 
         mirror {
             bindings = <
-&trans  &trans            &trans             &trans          &trans     &trans  &trans                                      &trans  &trans  &trans        &trans       &trans          &trans             &trans
-&trans  &trans            &trans             &trans          &trans     &trans  &trans                                      &trans  &trans  &trans        &trans       &trans          &trans             &trans
-&trans  &trans            &trans             &trans          &trans     &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans        &trans       &trans          &trans             &trans
-&trans  &trans            &trans             &trans          &trans     &trans                  &trans      &trans                  &trans  &trans        &trans       &trans          &trans             &trans
-&trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_ARROW  &kp RIGHT          &trans  &trans  &trans      &trans  &trans  &trans          &kp UP_ARROW  &click_caps  &kp DOWN_ARROW  &rightclick_grave  &trans
+&trans  &trans            &trans          &trans             &trans     &trans  &trans                                      &trans  &trans  &trans        &trans       &trans          &trans             &trans
+&trans  &trans            &trans          &trans             &trans     &trans  &trans                                      &trans  &trans  &trans        &trans       &trans          &trans             &trans
+&trans  &trans            &trans          &trans             &trans     &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans        &trans       &trans          &trans             &trans
+&trans  &trans            &trans          &trans             &trans     &trans                  &trans      &trans                  &trans  &trans        &trans       &trans          &trans             &trans
+&trans  &kp LEFT_BRACKET  &kp LEFT_ARROW  &kp RIGHT_BRACKET  &kp RIGHT          &trans  &trans  &trans      &trans  &trans  &trans          &kp UP_ARROW  &click_caps  &kp DOWN_ARROW  &rightclick_grave  &trans
             >;
         };
 
         control_layer {
             bindings = <
-&trans  &tog 7               &tog 8            &tog 9     &tog 10         &tog 11       &trans                                      &trans  &tog 12   &tog 13    &tog 14  &tog 15    &tog 16          &trans
-&trans  &trans               &trans            &trans     &kp SCROLLLOCK  &kp UP_ARROW  &trans                                      &trans  &kp UP    &kp LC(Y)  &trans   &kp LC(O)  &trans           &trans
-&trans  &kp LC(A)            &kp LC(S)         &kp LC(D)  &trans          &kp DOWN      &trans  &trans  &trans      &trans  &trans  &trans  &kp DOWN  &trans     &trans   &trans     &kp PRINTSCREEN  &trans
-&trans  &windows_click_lock  &kp LC(Z)         &kp LC(X)  &kp LC(C)       &kp LC(V)                     &trans      &trans                  &trans    &trans     &trans   &trans     &trans           &trans
-&trans  &trans               &kp LC(UP_ARROW)  &trans     &kp LC(DOWN)                  &trans  &trans  &trans      &trans  &trans  &trans            &trans     &trans   &trans     &trans           &trans
+&trans  &tog 7               &tog 8            &tog 9     &tog 10         &tog 11       &trans                                      &trans  &tog 12   &tog 13    &tog 14  &tog 15         &tog 16          &trans
+&trans  &trans               &trans            &trans     &kp SCROLLLOCK  &kp UP_ARROW  &trans                                      &trans  &kp UP    &kp LC(Y)  &trans   &kp LC(O)       &trans           &trans
+&trans  &kp LC(A)            &kp LC(S)         &kp LC(D)  &trans          &kp DOWN      &trans  &trans  &trans      &trans  &trans  &trans  &kp DOWN  &trans     &trans   &trans          &kp PRINTSCREEN  &trans
+&trans  &windows_click_lock  &kp LC(Z)         &kp LC(X)  &kp LC(C)       &kp LC(V)                     &trans      &trans                  &trans    &trans     &trans   &trans          &kp UP_ARROW     &trans
+&trans  &trans               &kp LC(UP_ARROW)  &trans     &kp LC(DOWN)                  &trans  &trans  &trans      &trans  &trans  &trans            &trans     &trans   &kp LEFT_ARROW  &kp DOWN         &kp RIGHT
             >;
         };
 
