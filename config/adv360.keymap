@@ -119,7 +119,7 @@
 
         backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <41 42>;
+            key-positions = <23 24>;
             layers = <0 5 6>;
             slow-release;
             timeout-ms = <10000>;
@@ -127,7 +127,7 @@
 
         enter {
             bindings = <&kp ENTER>;
-            key-positions = <43 44>;
+            key-positions = <25 26>;
             layers = <0 5 6>;
             timeout-ms = <1000>;
         };
