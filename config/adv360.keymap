@@ -234,7 +234,7 @@
             bindings = <
 &trans  &trans     &trans     &trans        &trans     &trans                       &trans                                      &trans  &trans        &trans         &trans  &trans     &trans         &trans
 &trans  &tog 8     &trans     &kp UP_ARROW  &trans     &trans                       &trans                                      &trans  &trans        &trans         &trans  &trans     &trans         &trans
-&trans  &kp LC(A)  &kp LEFT   &kp DOWN      &kp RIGHT  &short_cut_layer_activation  &trans  &trans  &trans      &trans  &trans  &trans  &kp LC(HOME)  &kp BACKSPACE  &trans  &kp ENTER  &kp SEMICOLON  &kp END
+&trans  &kp LC(A)  &kp LEFT   &kp DOWN      &kp RIGHT  &short_cut_layer_activation  &trans  &trans  &trans      &trans  &trans  &trans  &kp LC(HOME)  &kp BACKSPACE  &tog 9  &kp ENTER  &kp SEMICOLON  &kp END
 &trans  &kp LC(Y)  &kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)                                    &trans      &trans                  &trans        &trans         &trans  &trans     &trans         &trans
 &trans  &trans     &trans     &trans        &trans                                  &trans  &trans  &trans      &trans  &trans  &trans                &trans         &trans  &trans     &trans         &trans
             >;
