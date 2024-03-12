@@ -118,12 +118,13 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&tog 8>,
+                <&to 7 &kp M &kp A &kp C &kp R &kp O &kp SPACE &kp S &kp T &kp A &kp R &kp T &kp E &kp D &kp DOT &kp SPACE &kp N &kp O &kp W &kp SPACE &kp W &kp A &kp I &kp T &kp I &kp N &kp G &kp DOT>,
                 <&macro_pause_for_release>,
-                <&macro_release>,
-                <&to 7>;
+                <&kp M &kp A &kp C &kp R &kp O &kp SPACE &kp S &kp T &kp O &kp P &kp P &kp E &kp D &kp DOT>;
 
             label = "SHORT_CUT_LAYER_ACTIVATION";
+            wait-ms = <1>;
+            tap-ms = <1>;
         };
     };
 
