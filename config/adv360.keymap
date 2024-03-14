@@ -111,7 +111,17 @@
             bindings = <&tog>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <180>;
+            flavor = "tap-preferred";
+        };
+
+        tap_tog_layer_hold_mo_layer: tap_tog_layer_hold_mo_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_TOG_LAYER_HOLD_MO_LAYER";
+            bindings = <&mo>, <&tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
             flavor = "tap-preferred";
         };
     };
@@ -282,19 +292,19 @@
             bindings = <
 &trans  &trans  &trans    &trans        &trans     &trans  &trans                                      &trans  &trans     &trans        &trans     &trans     &trans               &trans
 &trans  &tog 9  &trans    &kp UP_ARROW  &trans     &trans  &trans                                      &trans  &trans     &trans        &tog 9     &trans     &trans               &trans
-&trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans     &kp UP_ARROW  &mkp MB1   &kp DOWN   &right_middle_click  &kp ENTER
-&trans  &trans  &trans    &trans        &trans     &trans                  &trans      &trans                  &kp LC(Y)  &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LC(Z)            &short_cut_layer_activation 9 9
+&trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp LC(A)  &kp UP_ARROW  &mkp MB1   &kp DOWN   &right_middle_click  &kp ENTER
+&trans  &trans  &trans    &trans        &trans     &trans                  &trans      &trans                  &kp LC(Y)  &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LC(Z)            &tap_tog_layer_hold_mo_layer 10 10
 &trans  &trans  &trans    &trans        &trans             &trans  &trans  &trans      &trans  &trans  &trans             &trans        &trans     &trans     &trans               &trans
             >;
         };
 
-        layer_10 {
+        right_hand_navigation {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans            &trans        &trans        &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp LEFT          &kp DOWN      &kp RIGHT     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans            &trans        &trans        &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans            &trans        &trans        &trans  &trans
             >;
         };
 
