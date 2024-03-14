@@ -125,13 +125,13 @@
         };
 
         short_cut_layer_activation: short_cut_layer_activation {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
             bindings =
                 <&macro_tap>,
-                <&tog 8>,
+                <&macro_param_1to1 &tog MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
-                <&tog 8>;
+                <&macro_param_2to1 &tog MACRO_PLACEHOLDER>;
 
             label = "SHORT_CUT_LAYER_ACTIVATION";
             wait-ms = <1>;
@@ -270,21 +270,21 @@
 
         quick_keys {
             bindings = <
-&trans  &trans     &trans            &trans        &trans        &trans                       &trans                                      &trans  &trans    &trans         &trans  &trans     &trans   &trans
-&trans  &tog 8     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans                       &trans                                      &trans  &trans    &trans         &trans  &trans     &trans   &trans
-&trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &short_cut_layer_activation  &trans  &trans  &trans      &trans  &trans  &trans  &kp HOME  &kp BACKSPACE  &tog 8  &kp ENTER  &kp END  &trans
-&trans  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                                    &trans      &trans                  &trans    &trans         &trans  &trans     &trans   &trans
-&trans  &trans     &trans            &trans        &trans                                     &trans  &trans  &trans      &trans  &trans  &trans            &trans         &trans  &trans     &trans   &trans
+&trans  &trans     &trans            &trans        &trans        &trans                           &trans                                      &trans  &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &tog 8     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans                           &trans                                      &trans  &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &short_cut_layer_activation 8 8  &trans  &trans  &trans      &trans  &trans  &trans  &kp HOME  &kp BACKSPACE  &tog 8  &kp ENTER  &kp END  &trans
+&trans  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                                        &trans      &trans                  &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &trans     &trans            &trans        &trans                                         &trans  &trans  &trans      &trans  &trans  &trans            &trans         &trans  &trans     &trans   &trans
             >;
         };
 
         mouse_layer {
             bindings = <
-&trans  &trans  &trans    &trans        &trans     &trans  &trans                                      &trans  &trans  &trans        &trans    &trans    &trans               &trans
-&trans  &tog 9  &trans    &kp UP_ARROW  &trans     &trans  &trans                                      &trans  &trans  &trans        &tog 9    &trans    &trans               &trans
-&trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp UP_ARROW  &mkp MB1  &kp DOWN  &right_middle_click  &trans
-&trans  &trans  &trans    &trans        &trans     &trans                  &trans      &trans                  &trans  &trans        &tog 9    &trans    &trans               &trans
-&trans  &trans  &trans    &trans        &trans             &trans  &trans  &trans      &trans  &trans  &trans          &trans        &trans    &trans    &trans               &trans
+&trans  &trans  &trans    &trans        &trans     &trans  &trans                                      &trans  &trans     &trans        &trans     &trans     &trans               &trans
+&trans  &tog 9  &trans    &kp UP_ARROW  &trans     &trans  &trans                                      &trans  &trans     &trans        &tog 9     &trans     &trans               &trans
+&trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans     &kp UP_ARROW  &mkp MB1   &kp DOWN   &right_middle_click  &kp ENTER
+&trans  &trans  &trans    &trans        &trans     &trans                  &trans      &trans                  &kp LC(Y)  &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LC(Z)            &short_cut_layer_activation 9 9
+&trans  &trans  &trans    &trans        &trans             &trans  &trans  &trans      &trans  &trans  &trans             &trans        &trans     &trans     &trans               &trans
             >;
         };
 
