@@ -303,7 +303,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans            &trans        &trans        &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp LEFT          &kp DOWN      &kp RIGHT     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans            &trans        &trans        &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans            &trans        &trans        &trans  &tap_layer_hold_kp LEFT_SHIFT 10
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans            &trans        &trans        &trans  &trans
             >;
         };
