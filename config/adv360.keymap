@@ -250,7 +250,7 @@
 
         control_layer {
             bindings = <
-&trans  &fusion_rotate_start  &fusion_rotate_end  &trans     &trans          &trans        &trans                                      &trans  &trans    &trans     &trans  &trans          &trans           &trans
+&trans  &fusion_rotate_start  &fusion_rotate_end  &tog 7     &trans          &trans        &trans                                      &trans  &trans    &trans     &trans  &trans          &trans           &trans
 &trans  &trans                &trans              &trans     &kp SCROLLLOCK  &kp UP_ARROW  &trans                                      &trans  &kp UP    &kp LC(Y)  &trans  &kp LC(O)       &trans           &trans
 &trans  &kp LC(A)             &kp LC(S)           &kp LC(D)  &trans          &kp DOWN      &trans  &trans  &trans      &trans  &trans  &trans  &kp DOWN  &trans     &trans  &trans          &kp PRINTSCREEN  &trans
 &trans  &windows_click_lock   &kp LC(Z)           &kp LC(X)  &kp LC(C)       &kp LC(V)                     &trans      &trans                  &trans    &trans     &trans  &trans          &kp UP_ARROW     &trans
@@ -258,13 +258,13 @@
             >;
         };
 
-        layer_7 {
+        test_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&to 0   &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &tog 29  &tog 30  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans   &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans   &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans   &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&to 0   &trans   &trans   &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -509,5 +509,12 @@
         };
     };
 
-    conditional_layers { compatible = "zmk,conditional-layers"; };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        trilayer_example {
+            if-layers = <29 30>;
+            then-layer = <31>;
+        };
+    };
 };
