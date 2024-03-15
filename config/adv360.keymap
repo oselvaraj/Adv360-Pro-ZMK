@@ -50,19 +50,19 @@
             tapping-term-ms = <200>;
         };
 
-        tap_clk_2tap_mclk_alt_tap_grave: tap_clk_2tap_mclk_alt_tap_grave {
+        tap_rclk_2tp_mclk_alt_tap_grave: tap_rclk_2tp_mclk_alt_tap_grave {
             compatible = "zmk,behavior-mod-morph";
-            label = "TAP_CLK_2TAP_MCLK_ALT_TAP_GRAVE";
+            label = "TAP_RCLK_2TP_MCLK_ALT_TAP_GRAVE";
             bindings = <&tap_rclk_2tap_mclk>, <&kp GRAVE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
-        tap_click_alt_tap_caps: tap_click_alt_tap_caps {
+        tap_click_w_drag_alt_tap_caps: tap_click_w_drag_alt_tap_caps {
             compatible = "zmk,behavior-mod-morph";
-            label = "TAP_CLICK_ALT_TAP_CAPS";
-            bindings = <&mkp MB1>, <&kp CAPSLOCK>;
+            label = "TAP_CLICK_W_DRAG_ALT_TAP_CAPS";
+            bindings = <&tap_click_hold_drag 0 0>, <&kp CAPSLOCK>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
@@ -125,6 +125,17 @@
             tapping-term-ms = <150>;
             flavor = "tap-preferred";
         };
+
+        tap_click_hold_drag: tap_click_hold_drag {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_CLICK_HOLD_DRAG";
+            bindings = <&mouse_drag_start>, <&mouse_click>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            require-prior-idle-ms = <125>;
+        };
     };
 
     macros {
@@ -180,6 +191,13 @@
 
             label = "MOUSE_DRAG_END";
         };
+
+        mouse_click: mouse_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mouse_drag_end &mkp MB1>;
+            label = "MOUSE_CLICK";
+        };
     };
 
     combos {
@@ -203,11 +221,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL                          &kp N1                            &kp N2        &kp N3                   &kp N4    &kp N5  &tog 1                                                                                      &mo 3                              &kp N6  &kp N7    &kp N8                      &kp N9     &kp N0    &kp MINUS
-&kp ESCAPE                         &kp Q                             &kp W         &kp E                    &kp R     &kp T   &tap_rclk_2tap_mclk_alt_tap_dtop                                                            &tap_rclk_2tap_mclk                &kp Y   &kp U     &tap_kp_hold_tog_layer 9 I  &kp O      &kp SQT   &kp BSLH
-&kp TAB                            &kp A                             &kp S         &kp D                    &kp F     &kp G   &tap_click_alt_tap_tabs           &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tap_click_alt_tap_photoshop       &kp H   &kp J     &tap_kp_hold_mo_layer 8 K   &kp L      &kp P     &kp SEMICOLON
-&tap_layer_hold_kp LEFT_SHIFT 5    &kp SLASH                         &kp Z         &kp X                    &kp C     &kp V                                                &kp PAGE_UP        &kp HOME                                                       &kp B   &kp N     &tap_kp_hold_tog_layer 9 M  &kp COMMA  &kp DOT   &kt RIGHT_SHIFT
-&tap_layer_hold_kp LEFT_CONTROL 6  &tap_clk_2tap_mclk_alt_tap_grave  &kp UP_ARROW  &tap_click_alt_tap_caps  &kp DOWN          &kp SPACE                         &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &tap_kp_hold_mo_layer 9 BACKSPACE          &kp LEFT  &kp LEFT_BRACKET            &kp RIGHT  &kp RBKT  &mo 2
+&kp EQUAL                          &kp N1                            &kp N2        &kp N3                          &kp N4    &kp N5  &tog 1                                                                                      &mo 3                              &kp N6  &kp N7    &kp N8                      &kp N9     &kp N0    &kp MINUS
+&kp ESCAPE                         &kp Q                             &kp W         &kp E                           &kp R     &kp T   &tap_rclk_2tap_mclk_alt_tap_dtop                                                            &tap_rclk_2tap_mclk                &kp Y   &kp U     &tap_kp_hold_tog_layer 9 I  &kp O      &kp SQT   &kp BSLH
+&kp TAB                            &kp A                             &kp S         &kp D                           &kp F     &kp G   &tap_click_alt_tap_tabs           &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tap_click_alt_tap_photoshop       &kp H   &kp J     &tap_kp_hold_mo_layer 8 K   &kp L      &kp P     &kp SEMICOLON
+&tap_layer_hold_kp LEFT_SHIFT 5    &kp SLASH                         &kp Z         &kp X                           &kp C     &kp V                                                &kp PAGE_UP        &kp HOME                                                       &kp B   &kp N     &tap_kp_hold_tog_layer 9 M  &kp COMMA  &kp DOT   &kt RIGHT_SHIFT
+&tap_layer_hold_kp LEFT_CONTROL 6  &tap_rclk_2tp_mclk_alt_tap_grave  &kp UP_ARROW  &tap_click_w_drag_alt_tap_caps  &kp DOWN          &kp SPACE                         &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &tap_kp_hold_mo_layer 9 BACKSPACE          &kp LEFT  &kp LEFT_BRACKET            &kp RIGHT  &kp RBKT  &mo 2
             >;
         };
 
@@ -253,11 +271,11 @@
 
         mirror {
             bindings = <
-&trans  &trans            &trans          &trans             &trans     &trans  &trans                                      &trans  &trans  &trans        &trans                   &trans          &trans                            &trans
-&trans  &trans            &trans          &trans             &trans     &trans  &trans                                      &trans  &trans  &trans        &trans                   &trans          &trans                            &trans
-&trans  &trans            &trans          &trans             &trans     &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans        &trans                   &trans          &trans                            &trans
-&trans  &trans            &trans          &trans             &trans     &trans                  &trans      &trans                  &trans  &trans        &trans                   &trans          &trans                            &trans
-&trans  &kp LEFT_BRACKET  &kp LEFT_ARROW  &kp RIGHT_BRACKET  &kp RIGHT          &trans  &trans  &trans      &trans  &trans  &trans          &kp UP_ARROW  &tap_click_alt_tap_caps  &kp DOWN_ARROW  &tap_clk_2tap_mclk_alt_tap_grave  &trans
+&trans  &trans            &trans          &trans             &trans     &trans  &trans                                      &trans  &trans  &trans        &trans                          &trans          &trans                            &trans
+&trans  &trans            &trans          &trans             &trans     &trans  &trans                                      &trans  &trans  &trans        &trans                          &trans          &trans                            &trans
+&trans  &trans            &trans          &trans             &trans     &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans        &trans                          &trans          &trans                            &trans
+&trans  &trans            &trans          &trans             &trans     &trans                  &trans      &trans                  &trans  &trans        &trans                          &trans          &trans                            &trans
+&trans  &kp LEFT_BRACKET  &kp LEFT_ARROW  &kp RIGHT_BRACKET  &kp RIGHT          &trans  &trans  &trans      &trans  &trans  &trans          &kp UP_ARROW  &tap_click_w_drag_alt_tap_caps  &kp DOWN_ARROW  &tap_rclk_2tp_mclk_alt_tap_grave  &trans
             >;
         };
 
