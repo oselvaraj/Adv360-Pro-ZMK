@@ -113,6 +113,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <180>;
             flavor = "tap-preferred";
+            require-prior-idle-ms = <125>;
         };
 
         tap_tog_layer_hold_mo_layer: tap_tog_layer_hold_mo_layer {
@@ -181,19 +182,7 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        mouse_drag_start {
-            bindings = <&mouse_drag_start>;
-            key-positions = <10 9>;
-        };
-
-        mouse_click_end {
-            bindings = <&mouse_drag_start>;
-            key-positions = <11 10>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -260,11 +249,11 @@
 
         control_layer {
             bindings = <
-&trans  &fusion_rotate_start  &fusion_rotate_end  &tog 7     &trans          &trans        &trans                                      &trans  &trans    &trans     &trans  &trans          &trans           &trans
-&trans  &trans                &trans              &trans     &kp SCROLLLOCK  &kp UP_ARROW  &trans                                      &trans  &kp UP    &kp LC(Y)  &trans  &kp LC(O)       &trans           &trans
-&trans  &kp LC(A)             &kp LC(S)           &kp LC(D)  &trans          &kp DOWN      &trans  &trans  &trans      &trans  &trans  &trans  &kp DOWN  &trans     &trans  &trans          &kp PRINTSCREEN  &trans
-&trans  &windows_click_lock   &kp LC(Z)           &kp LC(X)  &kp LC(C)       &kp LC(V)                     &trans      &trans                  &trans    &trans     &trans  &trans          &kp UP_ARROW     &trans
-&trans  &trans                &kp LC(UP_ARROW)    &trans     &kp LC(DOWN)                  &trans  &trans  &trans      &trans  &trans  &trans            &trans     &trans  &kp LEFT_ARROW  &kp DOWN         &kp RIGHT
+&trans  &fusion_rotate_start  &fusion_rotate_end  &tog 7     &mouse_drag_start  &mouse_drag_end  &trans                                      &trans  &trans    &trans     &trans  &trans          &trans           &trans
+&trans  &trans                &trans              &trans     &kp SCROLLLOCK     &kp UP_ARROW     &trans                                      &trans  &kp UP    &kp LC(Y)  &trans  &kp LC(O)       &trans           &trans
+&trans  &kp LC(A)             &kp LC(S)           &kp LC(D)  &trans             &kp DOWN         &trans  &trans  &trans      &trans  &trans  &trans  &kp DOWN  &trans     &trans  &trans          &kp PRINTSCREEN  &trans
+&trans  &windows_click_lock   &kp LC(Z)           &kp LC(X)  &kp LC(C)          &kp LC(V)                        &trans      &trans                  &trans    &trans     &trans  &trans          &kp UP_ARROW     &trans
+&trans  &trans                &kp LC(UP_ARROW)    &trans     &kp LC(DOWN)                        &trans  &trans  &trans      &trans  &trans  &trans            &trans     &trans  &kp LEFT_ARROW  &kp DOWN         &kp RIGHT
             >;
         };
 
