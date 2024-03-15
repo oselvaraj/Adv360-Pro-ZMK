@@ -32,9 +32,9 @@
             bindings = <&kp>, <&kp>;
         };
 
-        right_middle_click: right_middle_click {
+        tap_rclk_2tap_mclk: tap_rclk_2tap_mclk {
             compatible = "zmk,behavior-tap-dance";
-            label = "RIGHT_MIDDLE_CLICK";
+            label = "TAP_RCLK_2TAP_MCLK";
             #binding-cells = <0>;
             bindings = <&mkp MB2>, <&mkp MB3>;
 
@@ -50,54 +50,54 @@
             tapping-term-ms = <200>;
         };
 
-        rightclick_grave: rightclick_grave {
+        tap_clk_2tap_mclk_alt_tap_grave: tap_clk_2tap_mclk_alt_tap_grave {
             compatible = "zmk,behavior-mod-morph";
-            label = "RIGHTCLICK_GRAVE";
-            bindings = <&right_middle_click>, <&kp GRAVE>;
+            label = "TAP_CLK_2TAP_MCLK_ALT_TAP_GRAVE";
+            bindings = <&tap_rclk_2tap_mclk>, <&kp GRAVE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
-        click_caps: click_caps {
+        tap_click_alt_tap_caps: tap_click_alt_tap_caps {
             compatible = "zmk,behavior-mod-morph";
-            label = "CLICK_CAPS";
+            label = "TAP_CLICK_ALT_TAP_CAPS";
             bindings = <&mkp MB1>, <&kp CAPSLOCK>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
-        tab_or_click: tab_or_click {
+        tap_click_alt_tap_tabs: tap_click_alt_tap_tabs {
             compatible = "zmk,behavior-mod-morph";
-            label = "TAB_OR_CLICK";
+            label = "TAP_CLICK_ALT_TAP_TABS";
             bindings = <&mkp MB1>, <&kp LG(TAB)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
-        right_click_or_desktop: right_click_or_desktop {
+        tap_rclk_2tap_mclk_alt_tap_dtop: tap_rclk_2tap_mclk_alt_tap_dtop {
             compatible = "zmk,behavior-mod-morph";
-            label = "RIGHT_CLICK_OR_DESKTOP";
-            bindings = <&right_middle_click>, <&kp LG(D)>;
+            label = "TAP_RCLK_2TAP_MCLK_ALT_TAP_DTOP";
+            bindings = <&tap_rclk_2tap_mclk>, <&kp LG(D)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
-        click_or_ps_layer: click_or_ps_layer {
+        tap_click_alt_tap_photoshop: tap_click_alt_tap_photoshop {
             compatible = "zmk,behavior-mod-morph";
-            label = "CLICK_OR_PS_LAYER";
+            label = "TAP_CLICK_ALT_TAP_PHOTOSHOP";
             bindings = <&mkp MB1>, <&to 4>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
         };
 
-        kp_mo_taphold: kp_mo_taphold {
+        tap_kp_hold_mo_layer: tap_kp_hold_mo_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "KP_MO_TAPHOLD";
+            label = "TAP_KP_HOLD_MO_LAYER";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -105,13 +105,13 @@
             flavor = "balanced";
         };
 
-        kp_tog_taphold: kp_tog_taphold {
+        tap_kp_hold_tog_layer: tap_kp_hold_tog_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "KP_TOG_TAPHOLD";
+            label = "TAP_KP_HOLD_TOG_LAYER";
             bindings = <&tog>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <180>;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
             require-prior-idle-ms = <125>;
         };
@@ -189,11 +189,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL                          &kp N1             &kp N2        &kp N3       &kp N4    &kp N5  &tog 1                                                                             &mo 3                       &kp N6  &kp N7    &kp N8               &kp N9     &kp N0    &kp MINUS
-&kp ESCAPE                         &kp Q              &kp W         &kp E        &kp R     &kp T   &right_click_or_desktop                                                            &right_middle_click         &kp Y   &kp U     &kp_tog_taphold 9 I  &kp O      &kp SQT   &kp BSLH
-&kp TAB                            &kp A              &kp S         &kp D        &kp F     &kp G   &tab_or_click            &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &click_or_ps_layer          &kp H   &kp J     &kp_mo_taphold 8 K   &kp L      &kp P     &kp SEMICOLON
-&tap_layer_hold_kp LEFT_SHIFT 5    &kp SLASH          &kp Z         &kp X        &kp C     &kp V                                       &kp PAGE_UP        &kp HOME                                                &kp B   &kp N     &kp_tog_taphold 9 M  &kp COMMA  &kp DOT   &kt RIGHT_SHIFT
-&tap_layer_hold_kp LEFT_CONTROL 6  &rightclick_grave  &kp UP_ARROW  &click_caps  &kp DOWN          &kp SPACE                &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &kp_mo_taphold 9 BACKSPACE          &kp LEFT  &kp LEFT_BRACKET     &kp RIGHT  &kp RBKT  &mo 2
+&kp EQUAL                          &kp N1                            &kp N2        &kp N3                   &kp N4    &kp N5  &tog 1                                                                                      &mo 3                              &kp N6  &kp N7    &kp N8                      &kp N9     &kp N0    &kp MINUS
+&kp ESCAPE                         &kp Q                             &kp W         &kp E                    &kp R     &kp T   &tap_rclk_2tap_mclk_alt_tap_dtop                                                            &tap_rclk_2tap_mclk                &kp Y   &kp U     &tap_kp_hold_tog_layer 9 I  &kp O      &kp SQT   &kp BSLH
+&kp TAB                            &kp A                             &kp S         &kp D                    &kp F     &kp G   &tap_click_alt_tap_tabs           &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tap_click_alt_tap_photoshop       &kp H   &kp J     &tap_kp_hold_mo_layer 8 K   &kp L      &kp P     &kp SEMICOLON
+&tap_layer_hold_kp LEFT_SHIFT 5    &kp SLASH                         &kp Z         &kp X                    &kp C     &kp V                                                &kp PAGE_UP        &kp HOME                                                       &kp B   &kp N     &tap_kp_hold_tog_layer 9 M  &kp COMMA  &kp DOT   &kt RIGHT_SHIFT
+&tap_layer_hold_kp LEFT_CONTROL 6  &tap_clk_2tap_mclk_alt_tap_grave  &kp UP_ARROW  &tap_click_alt_tap_caps  &kp DOWN          &kp SPACE                         &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &tap_kp_hold_mo_layer 9 BACKSPACE          &kp LEFT  &kp LEFT_BRACKET            &kp RIGHT  &kp RBKT  &mo 2
             >;
         };
 
@@ -239,11 +239,11 @@
 
         mirror {
             bindings = <
-&trans  &trans            &trans          &trans             &trans     &trans  &trans                                      &trans  &trans  &trans        &trans       &trans          &trans             &trans
-&trans  &trans            &trans          &trans             &trans     &trans  &trans                                      &trans  &trans  &trans        &trans       &trans          &trans             &trans
-&trans  &trans            &trans          &trans             &trans     &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans        &trans       &trans          &trans             &trans
-&trans  &trans            &trans          &trans             &trans     &trans                  &trans      &trans                  &trans  &trans        &trans       &trans          &trans             &trans
-&trans  &kp LEFT_BRACKET  &kp LEFT_ARROW  &kp RIGHT_BRACKET  &kp RIGHT          &trans  &trans  &trans      &trans  &trans  &trans          &kp UP_ARROW  &click_caps  &kp DOWN_ARROW  &rightclick_grave  &trans
+&trans  &trans            &trans          &trans             &trans     &trans  &trans                                      &trans  &trans  &trans        &trans                   &trans          &trans                            &trans
+&trans  &trans            &trans          &trans             &trans     &trans  &trans                                      &trans  &trans  &trans        &trans                   &trans          &trans                            &trans
+&trans  &trans            &trans          &trans             &trans     &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans        &trans                   &trans          &trans                            &trans
+&trans  &trans            &trans          &trans             &trans     &trans                  &trans      &trans                  &trans  &trans        &trans                   &trans          &trans                            &trans
+&trans  &kp LEFT_BRACKET  &kp LEFT_ARROW  &kp RIGHT_BRACKET  &kp RIGHT          &trans  &trans  &trans      &trans  &trans  &trans          &kp UP_ARROW  &tap_click_alt_tap_caps  &kp DOWN_ARROW  &tap_clk_2tap_mclk_alt_tap_grave  &trans
             >;
         };
 
@@ -281,7 +281,7 @@
             bindings = <
 &trans  &trans  &trans    &trans        &trans     &trans  &trans                                      &trans  &trans     &trans        &trans     &trans     &trans               &trans
 &trans  &tog 9  &trans    &kp UP_ARROW  &trans     &trans  &trans                                      &trans  &trans     &trans        &tog 9     &trans     &trans               &trans
-&trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp LC(A)  &kp UP_ARROW  &mkp MB1   &kp DOWN   &right_middle_click  &kp ENTER
+&trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp LC(A)  &kp UP_ARROW  &mkp MB1   &kp DOWN   &tap_rclk_2tap_mclk  &kp ENTER
 &trans  &trans  &trans    &trans        &trans     &trans                  &trans      &trans                  &kp LC(Y)  &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LC(Z)            &tap_tog_layer_hold_mo_layer 10 10
 &trans  &trans  &trans    &trans        &trans             &trans  &trans  &trans      &trans  &trans  &trans             &trans        &trans     &trans     &trans               &trans
             >;
