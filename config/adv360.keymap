@@ -134,7 +134,7 @@
             label = "WINDOWS_CLICK_LOCK";
         };
 
-        short_cut_layer_activation: short_cut_layer_activation {
+        press_togLyrA_rel_togLyrB: short_cut_layer_activation {
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
             bindings =
@@ -186,12 +186,12 @@
 
         mouse_drag_start {
             bindings = <&mouse_drag_start>;
-            key-positions = <70 10>;
+            key-positions = <10 9>;
         };
 
         mouse_click_end {
             bindings = <&mouse_drag_start>;
-            key-positions = <70 11>;
+            key-positions = <11 10>;
         };
     };
 
@@ -280,11 +280,11 @@
 
         quick_keys {
             bindings = <
-&trans  &trans     &trans            &trans        &trans        &trans                           &trans                                      &trans  &trans    &trans         &trans  &trans     &trans   &trans
-&trans  &tog 8     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans                           &trans                                      &trans  &trans    &trans         &trans  &trans     &trans   &trans
-&trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &short_cut_layer_activation 8 8  &trans  &trans  &trans      &trans  &trans  &trans  &kp HOME  &kp BACKSPACE  &tog 8  &kp ENTER  &kp END  &trans
-&trans  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                                        &trans      &trans                  &trans    &trans         &trans  &trans     &trans   &trans
-&trans  &trans     &trans            &trans        &trans                                         &trans  &trans  &trans      &trans  &trans  &trans            &trans         &trans  &trans     &trans   &trans
+&trans  &trans     &trans            &trans        &trans        &trans                          &trans                                      &trans  &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &tog 8     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans                          &trans                                      &trans  &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &press_togLyrA_rel_togLyrB 8 8  &trans  &trans  &trans      &trans  &trans  &trans  &kp HOME  &kp BACKSPACE  &tog 8  &kp ENTER  &kp END  &trans
+&trans  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                                       &trans      &trans                  &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &trans     &trans            &trans        &trans                                        &trans  &trans  &trans      &trans  &trans  &trans            &trans         &trans  &trans     &trans   &trans
             >;
         };
 
