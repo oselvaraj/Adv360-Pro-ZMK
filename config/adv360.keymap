@@ -168,7 +168,7 @@
         mouse_drag_start: mouse_drag_start {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp PERIOD>;
+            bindings = <&macro_press>, <&mkp MB1>;
 
             label = "MOUSE_DRAG_START";
         };
@@ -176,7 +176,7 @@
         mouse_drag_end: mouse_drag_end {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release>, <&kp PERIOD>;
+            bindings = <&macro_release>, <&mkp MB1>;
 
             label = "MOUSE_DRAG_END";
         };
