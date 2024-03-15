@@ -182,7 +182,21 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        mouse_drag {
+            bindings = <&mouse_drag_start>;
+            key-positions = <9 10>;
+            require-prior-idle-ms = <125>;
+        };
+
+        mouse_drag_end {
+            bindings = <&mouse_drag_end>;
+            key-positions = <10 11>;
+            require-prior-idle-ms = <125>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
