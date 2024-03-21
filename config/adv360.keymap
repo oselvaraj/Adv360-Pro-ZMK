@@ -218,37 +218,25 @@
         home {
             bindings = <&kp HOME>;
             key-positions = <30 31>;
-            layers = <5>;
+            layers = <14>;
         };
 
         end {
             bindings = <&kp END>;
             key-positions = <31 32>;
-            layers = <5>;
+            layers = <14>;
         };
 
         page_up {
             bindings = <&kp PAGE_UP>;
             key-positions = <30 17>;
-            layers = <5>;
+            layers = <14>;
         };
 
         page_down {
             bindings = <&kp PAGE_DOWN>;
             key-positions = <32 17>;
-            layers = <5>;
-        };
-
-        test {
-            bindings = <&kp ASTERISK>;
-            key-positions = <41 42>;
-            layers = <7>;
-        };
-
-        test1 {
-            bindings = <&kp DOLLAR>;
-            key-positions = <41 42>;
-            layers = <8>;
+            layers = <14>;
         };
     };
 
@@ -257,11 +245,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL                          &kp N1                            &kp N2        &kp N3                          &kp N4    &kp N5  &tog 1                                                                                      &mo 3                               &kp N6  &kp N7    &kp N8                       &kp N9     &kp N0    &kp MINUS
-&kp ESCAPE                         &kp Q                             &kp W         &kp E                           &kp R     &kp T   &tap_rclk_2tap_mclk_alt_tap_dtop                                                            &tap_rclk_2tap_mclk                 &kp Y   &kp U     &tap_kp_hold_tog_layer 10 I  &kp O      &kp SQT   &kp BSLH
-&kp TAB                            &kp A                             &kp S         &kp D                           &kp F     &kp G   &tap_click_alt_tap_tabs           &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tap_click_alt_tap_photoshop        &kp H   &kp J     &tap_kp_hold_mo_layer 9 K    &kp L      &kp P     &kp SEMICOLON
-&tap_layer_hold_kp LEFT_SHIFT 7    &kp SLASH                         &kp Z         &kp X                           &kp C     &kp V                                                &kp PAGE_UP        &kp HOME                                                        &kp B   &kp N     &tap_kp_hold_tog_layer 10 M  &kp COMMA  &kp DOT   &kt RIGHT_SHIFT
-&tap_layer_hold_kp LEFT_CONTROL 8  &tap_rclk_2tp_mclk_alt_tap_grave  &kp UP_ARROW  &tap_click_w_drag_alt_tap_caps  &kp DOWN          &kp SPACE                         &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &tap_kp_hold_mo_layer 10 BACKSPACE          &kp LEFT  &kp LEFT_BRACKET             &kp RIGHT  &kp RBKT  &mo 2
+&kp EQUAL                          &kp N1                            &kp N2        &kp N3                          &kp N4    &kp N5  &tog 1                                                                                      &mo 3                         &kp N6  &kp N7    &kp N8                       &kp N9     &kp N0    &kp MINUS
+&kp ESCAPE                         &kp Q                             &kp W         &kp E                           &kp R     &kp T   &tap_rclk_2tap_mclk_alt_tap_dtop                                                            &tap_rclk_2tap_mclk           &kp Y   &kp U     &tap_kp_hold_tog_layer 10 I  &kp O      &kp SQT   &kp BSLH
+&kp TAB                            &kp A                             &kp S         &kp D                           &kp F     &kp G   &tap_click_alt_tap_tabs           &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tap_click_alt_tap_photoshop  &kp H   &kp J     &tap_kp_hold_mo_layer 9 K    &kp L      &kp P     &kp SEMICOLON
+&tap_layer_hold_kp LEFT_SHIFT 7    &kp SLASH                         &kp Z         &kp X                           &kp C     &kp V                                                &kp PAGE_UP        &kp HOME                                                  &kp B   &kp N     &tap_kp_hold_tog_layer 10 M  &kp COMMA  &kp DOT   &kt RIGHT_SHIFT
+&tap_layer_hold_kp LEFT_CONTROL 8  &tap_rclk_2tp_mclk_alt_tap_grave  &kp UP_ARROW  &tap_click_w_drag_alt_tap_caps  &kp DOWN          &kp SPACE                         &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &kp BACKSPACE                         &kp LEFT  &kp LEFT_BRACKET             &kp RIGHT  &kp RBKT  &mo 2
             >;
         };
 
@@ -305,13 +293,13 @@
             >;
         };
 
-        nav_keys_template {
+        nav_keys_right_template {
             bindings = <
-&trans  &trans     &trans            &trans        &trans        &trans     &trans                                      &trans  &trans     &trans            &trans        &trans        &trans     &trans
-&trans  &trans     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans     &trans                                      &trans  &trans     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans     &trans
-&trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &trans     &trans  &trans  &trans      &trans  &trans  &trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &trans     &trans
-&trans  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                  &trans      &trans                  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)  &trans
-&trans  &trans     &trans            &trans        &trans                   &trans  &trans  &trans      &trans  &trans  &trans             &trans            &trans        &trans        &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans     &trans            &trans        &trans        &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans             &trans            &trans        &trans        &trans     &trans
             >;
         };
 
@@ -394,19 +382,17 @@
 &mo 3      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0          &kp UP      &kp DOWN      &kp KP_DOT     &kp RBKT         &mo 3
             >;
         };
-    };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        trilayer_example {
-            if-layers = <29 30>;
-            then-layer = <31>;
-        };
-
-        test1 {
-            if-layers = <2>;
-            then-layer = <31>;
+        nav_keys_template {
+            bindings = <
+&trans  &trans     &trans            &trans        &trans        &trans     &trans                                      &trans  &trans     &trans            &trans        &trans        &trans     &trans
+&trans  &trans     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans     &trans                                      &trans  &trans     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans     &trans
+&trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &trans     &trans  &trans  &trans      &trans  &trans  &trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &trans     &trans
+&trans  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                  &trans      &trans                  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)  &trans
+&trans  &trans     &trans            &trans        &trans                   &trans  &trans  &trans      &trans  &trans  &trans             &trans            &trans        &trans        &trans     &trans
+            >;
         };
     };
+
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
