@@ -245,7 +245,7 @@
 
         default_layer {
             bindings = <
-&kp EQUAL                          &kp N1                            &kp N2        &kp N3                          &kp N4    &kp N5  &tog 1                                                                                      &mo 3                         &kp N6  &kp N7    &kp N8                       &kp N9     &kp N0    &kp MINUS
+&kp EQUAL                          &kp N1                            &kp N2        &kp N3                          &kp N4    &kp N5  &tog 1                                                                                      &mo 4                         &kp N6  &kp N7    &kp N8                       &kp N9     &kp N0    &kp MINUS
 &kp ESCAPE                         &kp Q                             &kp W         &kp E                           &kp R     &kp T   &tap_rclk_2tap_mclk_alt_tap_dtop                                                            &tap_rclk_2tap_mclk           &kp Y   &kp U     &tap_kp_hold_tog_layer 10 I  &kp O      &kp SQT   &kp BSLH
 &kp TAB                            &kp A                             &kp S         &kp D                           &kp F     &kp G   &tap_click_alt_tap_tabs           &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tap_click_alt_tap_photoshop  &kp H   &kp J     &tap_kp_hold_mo_layer 9 K    &kp L      &kp P     &kp SEMICOLON
 &tap_layer_hold_kp LEFT_SHIFT 7    &kp SLASH                         &kp Z         &kp X                           &kp C     &kp V                                                &kp PAGE_UP        &kp HOME                                                  &kp B   &kp N     &tap_kp_hold_tog_layer 10 M  &kp COMMA  &kp DOT   &kt RIGHT_SHIFT
@@ -259,7 +259,7 @@
 &kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &none                                                    &none      &kp Y   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp BSLH
 &kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   &none     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp H   &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp SQT
 &kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                        &kp HOME      &kp PG_UP                        &kp N   &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &kp RSHFT
-&mo 3      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0          &kp UP      &kp DOWN      &kp KP_DOT     &kp RBKT         &mo 3
+&mo 4      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0          &kp UP      &kp DOWN      &kp KP_DOT     &kp RBKT         &mo 4
             >;
         };
 
@@ -273,16 +273,6 @@
             >;
         };
 
-        layer_mod {
-            bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                  &trans                  &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none         &none         &bootloader                                            &bootloader             &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none         &none         &none        &none  &none      &bt BT_CLR  &none       &rgb_ug RGB_MEFS_CMD 5  &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &macro_ver    &none                             &none      &none                                           &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none                       &none        &none  &none      &none       &bl BL_TOG  &rgb_ug RGB_TOG                &bl BL_INC  &bl BL_DEC  &none  &none  &none
-            >;
-        };
-
         nav_keys_left_template {
             bindings = <
 &trans  &trans     &trans            &trans        &trans        &trans     &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -290,6 +280,16 @@
 &trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &trans     &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans            &trans        &trans                   &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_mod {
+            bindings = <
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                  &trans                  &none  &none       &none       &none  &none  &none
+&none  &none         &none         &none         &none         &none         &bootloader                                            &bootloader             &none  &none       &none       &none  &none  &none
+&none  &none         &none         &none         &none         &none         &none        &none  &none      &bt BT_CLR  &none       &rgb_ug RGB_MEFS_CMD 5  &none  &none       &none       &none  &none  &none
+&none  &none         &none         &none         &macro_ver    &none                             &none      &none                                           &none  &none       &none       &none  &none  &none
+&none  &none         &none         &none         &none                       &none        &none  &none      &none       &bl BL_TOG  &rgb_ug RGB_TOG                &bl BL_INC  &bl BL_DEC  &none  &none  &none
             >;
         };
 
@@ -335,11 +335,11 @@
 
         quick_keys {
             bindings = <
-&trans  &trans     &trans            &trans        &trans        &trans                          &trans                                      &trans    &trans    &trans         &trans  &trans     &trans   &trans
-&trans  &tog 9     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans                          &trans                                      &trans    &trans    &trans         &trans  &trans     &trans   &trans
-&trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &press_togLyrA_rel_togLyrB 9 9  &trans  &trans  &trans      &trans  &trans  &trans    &kp HOME  &kp BACKSPACE  &tog 9  &kp ENTER  &kp END  &trans
-&trans  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                                       &trans      &trans                    &trans    &trans         &trans  &trans     &trans   &trans
-&trans  &trans     &trans            &trans        &trans                                        &trans  &trans  &trans      &trans  &trans  &mkp MB6            &trans         &trans  &trans     &trans   &trans
+&trans  &trans     &trans            &trans        &trans        &trans                          &trans                                      &trans  &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &tog 9     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans                          &trans                                      &trans  &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &press_togLyrA_rel_togLyrB 9 9  &trans  &trans  &trans      &trans  &trans  &trans  &kp HOME  &kp BACKSPACE  &tog 9  &kp ENTER  &kp END  &trans
+&trans  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                                       &trans      &trans                  &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &trans     &trans            &trans        &trans                                        &trans  &trans  &trans      &trans  &trans  &trans            &trans         &trans  &trans     &trans   &trans
             >;
         };
 
@@ -365,7 +365,7 @@
 
         unchanged_layer {
             bindings = <
-&kp EQUAL   &kp N1     &kp N2        &kp N3    &kp N4    &kp N5  &tog 1                                                             &mo 3     &kp N6  &kp N7    &kp N8            &kp N9     &kp N0    &kp MINUS
+&kp EQUAL   &kp N1     &kp N2        &kp N3    &kp N4    &kp N5  &tog 1                                                             &mo 4     &kp N6  &kp N7    &kp N8            &kp N9     &kp N0    &kp MINUS
 &kp ESCAPE  &kp Q      &kp W         &kp E     &kp R     &kp T   &to 0                                                              &trans    &kp Y   &kp U     &kp I             &kp O      &kp SQT   &kp BSLH
 &kp TAB     &kp A      &kp S         &kp D     &kp F     &kp G   &kp SCROLLLOCK  &kp LCTRL  &kp LALT           &kp LGUI  &kp RCTRL  &trans    &kp H   &kp J     &kp K             &kp L      &kp P     &kp SEMICOLON
 &kp LSHFT   &kp SLASH  &kp Z         &kp X     &kp C     &kp V                              &kp PAGE_UP        &kp HOME                       &kp B   &kp N     &kp M             &kp COMMA  &kp DOT   &kp RSHFT
@@ -379,7 +379,7 @@
 &kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &none                                                    &none      &kp Y   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp BSLH
 &kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   &none     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp H   &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp SQT
 &kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                        &kp HOME      &kp PG_UP                        &kp N   &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &kp RSHFT
-&mo 3      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0          &kp UP      &kp DOWN      &kp KP_DOT     &kp RBKT         &mo 3
+&mo 4      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0          &kp UP      &kp DOWN      &kp KP_DOT     &kp RBKT         &mo 4
             >;
         };
 
