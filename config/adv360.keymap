@@ -335,11 +335,11 @@
 
         quick_keys {
             bindings = <
-&trans  &trans     &trans            &trans        &trans        &trans                          &trans                                      &trans  &trans    &trans         &trans  &trans     &trans   &trans
-&trans  &tog 9     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans                          &trans                                      &trans  &trans    &trans         &trans  &trans     &trans   &trans
-&trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &press_togLyrA_rel_togLyrB 9 9  &trans  &trans  &trans      &trans  &trans  &trans  &kp HOME  &kp BACKSPACE  &tog 9  &kp ENTER  &kp END  &trans
-&trans  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                                       &trans      &trans                  &trans    &trans         &trans  &trans     &trans   &trans
-&trans  &trans     &trans            &trans        &trans                                        &trans  &trans  &trans      &trans  &trans  &trans            &trans         &trans  &trans     &trans   &trans
+&trans  &trans     &trans            &trans        &trans        &trans                          &trans                                      &trans    &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &tog 9     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans                          &trans                                      &trans    &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &press_togLyrA_rel_togLyrB 9 9  &trans  &trans  &trans      &trans  &trans  &trans    &kp HOME  &kp BACKSPACE  &tog 9  &kp ENTER  &kp END  &trans
+&trans  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                                       &trans      &trans                    &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &trans     &trans            &trans        &trans                                        &trans  &trans  &trans      &trans  &trans  &mkp MB4            &trans         &trans  &trans     &trans   &trans
             >;
         };
 
