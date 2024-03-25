@@ -198,6 +198,13 @@
             bindings = <&mouse_drag_end &mkp MB1>;
             label = "MOUSE_CLICK";
         };
+
+        tog_touch_to_click_layer: tog_touch_to_click_layer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 15 &mkp MB4>;
+            label = "TOG_TOUCH_TO_CLICK_LAYER";
+        };
     };
 
     combos {
@@ -335,11 +342,11 @@
 
         quick_keys {
             bindings = <
-&trans  &trans     &trans            &trans        &trans        &trans                          &trans                                      &trans    &trans    &trans         &trans  &trans     &trans   &trans
-&trans  &tog 9     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans                          &trans                                      &trans    &trans    &trans         &trans  &trans     &trans   &trans
-&trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &press_togLyrA_rel_togLyrB 9 9  &trans  &trans  &trans      &trans  &trans  &trans    &kp HOME  &kp BACKSPACE  &tog 9  &kp ENTER  &kp END  &trans
-&trans  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                                       &trans      &trans                    &trans    &trans         &trans  &trans     &trans   &trans
-&trans  &trans     &trans            &trans        &trans                                        &trans  &trans  &trans      &trans  &trans  &mkp MB4            &trans         &trans  &trans     &trans   &trans
+&trans  &trans     &trans            &trans        &trans        &trans                          &trans                                      &trans                     &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &tog 9     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans                          &trans                                      &trans                     &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &press_togLyrA_rel_togLyrB 9 9  &trans  &trans  &trans      &trans  &trans  &trans                     &kp HOME  &kp BACKSPACE  &tog 9  &kp ENTER  &kp END  &trans
+&trans  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                                       &trans      &trans                                     &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &trans     &trans            &trans        &trans                                        &trans  &trans  &trans      &trans  &trans  &tog_touch_to_click_layer            &trans         &trans  &trans     &trans   &trans
             >;
         };
 
@@ -390,6 +397,16 @@
 &trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &trans     &trans  &trans  &trans      &trans  &trans  &trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &trans     &trans
 &trans  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                  &trans      &trans                  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)  &trans
 &trans  &trans     &trans            &trans        &trans                   &trans  &trans  &trans      &trans  &trans  &trans             &trans            &trans        &trans        &trans     &trans
+            >;
+        };
+
+        touch_to_click_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &tog_touch_to_click_layer          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
