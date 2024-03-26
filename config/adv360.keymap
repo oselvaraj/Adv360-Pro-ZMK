@@ -402,11 +402,11 @@
 
         touch_to_click_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans                     &trans  &trans        &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans                     &trans  &trans        &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans                     &trans  &kp UP_ARROW  &mkp MB1  &kp DOWN  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                                     &trans  &trans        &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &tog_touch_to_click_layer          &trans        &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &tog_touch_to_click_layer          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
