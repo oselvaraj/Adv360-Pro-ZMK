@@ -205,6 +205,41 @@
             bindings = <&tog 8 &mkp MB4>;
             label = "TOG_TOUCH_TO_CLICK_LAYER";
         };
+
+        fw_fname: fw_fname {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(O) &kp M &kp P &kp R &kp A &kp K &kp A &kp S &kp H>;
+            label = "FW_FNAME";
+        };
+
+        fw_lname: fw_lname {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(S) &kp E &kp L &kp V &kp A &kp R &kp A &kp J>;
+            label = "FW_LNAME";
+        };
+
+        fw_pemail: fw_pemail {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp S &kp E &kp DOT &kp O &kp M &kp P &kp R &kp A &kp K &kp A &kp S &kp H &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "FW_PEMAIL";
+        };
+
+        fw_oemail: fw_oemail {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp O &kp M &kp P &kp R &kp A &kp K &kp A &kp S &kp H &kp DOT &kp S &kp E &kp L &kp V &kp A &kp R &kp A &kp J &kp AT &kp B &kp N &kp Y &kp M &kp E &kp L &kp L &kp O &kp N &kp DOT &kp C &kp O &kp M>;
+            label = "FW_OEMAIL";
+        };
+
+        fw_phone: fw_phone {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N5 &kp N5 &kp N1 &kp N2 &kp N2 &kp N9 &kp N7 &kp N3 &kp N3 &kp N8>;
+            label = "FW_PHONE";
+        };
     };
 
     combos {
@@ -252,11 +287,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL                          &kp N1     &kp N2                      &kp N3                      &kp N4    &kp N5  &tog 1                                                               &mo 3          &kp N6  &kp N7    &kp N8                     &kp N9     &kp N0    &kp MINUS
-&kp ESCAPE                         &kp Q      &tap_kp_hold_mo_layer 10 W  &kp E                       &kp R     &kp T   &mo 2                                                                &trans         &kp Y   &kp U     &kp I                      &kp O      &kp SQT   &kp BSLH
-&kp TAB                            &kp A      &tap_kp_hold_mo_layer 9 S   &tap_kp_hold_tog_layer 7 D  &kp F     &kp G   &trans     &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tog 11        &kp H   &kp J     &tap_kp_hold_mo_layer 6 K  &kp L      &kp P     &kp SEMICOLON
-&kp LEFT_SHIFT                     &kp SLASH  &kp Z                       &kp X                       &kp C     &kp V                         &kp PAGE_UP        &kp HOME                                   &kp B   &kp N     &kp M                      &kp COMMA  &kp DOT   &kp RIGHT_SHIFT
-&tap_layer_hold_kp LEFT_CONTROL 6  &kp GRAVE  &kp UP_ARROW                &kp CLCK                    &kp DOWN          &kp SPACE  &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &kp BACKSPACE          &kp LEFT  &kp LEFT_BRACKET           &kp RIGHT  &kp RBKT  &tap_layer_hold_kp RIGHT_CONTROL 7
+&kp EQUAL                          &kp N1     &kp N2                     &kp N3                      &kp N4                      &kp N5  &tog 1                                                               &mo 3          &kp N6  &kp N7    &kp N8                     &kp N9     &kp N0    &kp MINUS
+&kp ESCAPE                         &kp Q      &kp W                      &kp E                       &kp R                       &kp T   &mo 2                                                                &trans         &kp Y   &kp U     &kp I                      &kp O      &kp SQT   &kp BSLH
+&kp TAB                            &kp A      &tap_kp_hold_mo_layer 9 S  &tap_kp_hold_tog_layer 7 D  &tap_kp_hold_mo_layer 10 F  &kp G   &trans     &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tog 11        &kp H   &kp J     &tap_kp_hold_mo_layer 6 K  &kp L      &kp P     &kp SEMICOLON
+&kp LEFT_SHIFT                     &kp SLASH  &kp Z                      &kp X                       &kp C                       &kp V                         &kp PAGE_UP        &kp HOME                                   &kp B   &kp N     &kp M                      &kp COMMA  &kp DOT   &kp RIGHT_SHIFT
+&tap_layer_hold_kp LEFT_CONTROL 6  &kp GRAVE  &kp UP_ARROW               &kp CLCK                    &kp DOWN                            &kp SPACE  &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &kp BACKSPACE          &kp LEFT  &kp LEFT_BRACKET           &kp RIGHT  &kp RBKT  &tap_layer_hold_kp RIGHT_CONTROL 7
             >;
         };
 
@@ -342,21 +377,21 @@
 
         symbol_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans        &trans                &trans                 &trans          &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &kp LBKT      &kp RBKT              &kp EQUAL              &kp UNDERSCORE  &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp ASTERISK  &kp PLUS              &kp MINUS              &trans          &trans           &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans                &trans                &trans                 &trans          &trans           &trans
             >;
         };
 
         freq_words {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans     &trans     &trans      &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans     &trans     &fw_oemail  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &fw_fname  &fw_lname  &fw_oemail  &fw_phone  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans     &trans     &trans      &trans     &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans     &trans     &trans      &trans     &trans
             >;
         };
 
