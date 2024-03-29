@@ -202,7 +202,7 @@
         tog_touch_to_click_layer: tog_touch_to_click_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 8 &mkp MB4>;
+            bindings = <&tog 10 &mkp MB4>;
             label = "TOG_TOUCH_TO_CLICK_LAYER";
         };
 
@@ -287,11 +287,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL                          &kp N1     &kp N2                     &kp N3                      &kp N4                      &kp N5  &tog 1                                                               &mo 3          &kp N6  &kp N7    &kp N8                     &kp N9     &kp N0    &kp MINUS
-&kp ESCAPE                         &kp Q      &kp W                      &kp E                       &kp R                       &kp T   &mo 2                                                                &trans         &kp Y   &kp U     &kp I                      &kp O      &kp SQT   &kp BSLH
-&kp TAB                            &kp A      &tap_kp_hold_mo_layer 9 S  &tap_kp_hold_tog_layer 7 D  &tap_kp_hold_mo_layer 10 F  &kp G   &trans     &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tog 11        &kp H   &kp J     &tap_kp_hold_mo_layer 6 K  &kp L      &kp P     &kp SEMICOLON
-&kp LEFT_SHIFT                     &kp SLASH  &kp Z                      &kp X                       &kp C                       &kp V                         &kp PAGE_UP        &kp HOME                                   &kp B   &kp N     &kp M                      &kp COMMA  &kp DOT   &kp RIGHT_SHIFT
-&tap_layer_hold_kp LEFT_CONTROL 6  &kp GRAVE  &kp UP_ARROW               &kp CLCK                    &kp DOWN                            &kp SPACE  &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &kp BACKSPACE          &kp LEFT  &kp LEFT_BRACKET           &kp RIGHT  &kp RBKT  &tap_layer_hold_kp RIGHT_CONTROL 7
+&kp EQUAL                          &kp N1     &kp N2                     &kp N3                      &kp N4                     &kp N5  &tog 1                                                               &mo 3          &kp N6  &kp N7    &kp N8                     &kp N9     &kp N0    &kp MINUS
+&kp ESCAPE                         &kp Q      &kp W                      &kp E                       &kp R                      &kp T   &mo 2                                                                &trans         &kp Y   &kp U     &kp I                      &kp O      &kp SQT   &kp BSLH
+&kp TAB                            &kp A      &tap_kp_hold_mo_layer 8 S  &tap_kp_hold_tog_layer 7 D  &tap_kp_hold_mo_layer 9 F  &kp G   &trans     &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tog 12        &kp H   &kp J     &tap_kp_hold_mo_layer 6 K  &kp L      &kp P     &kp SEMICOLON
+&kp LEFT_SHIFT                     &kp SLASH  &kp Z                      &kp X                       &kp C                      &kp V                         &kp PAGE_UP        &kp HOME                                   &kp B   &kp N     &kp M                      &kp COMMA  &kp DOT   &kp RIGHT_SHIFT
+&tap_layer_hold_kp LEFT_CONTROL 6  &kp GRAVE  &kp UP_ARROW               &kp CLCK                    &kp DOWN                           &kp SPACE  &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &kp BACKSPACE          &kp LEFT  &kp LEFT_BRACKET           &kp RIGHT  &kp RBKT  &tap_layer_hold_kp RIGHT_CONTROL 7
             >;
         };
 
@@ -337,11 +337,11 @@
 
         nav_macro_base_layer {
             bindings = <
-&windows_click_lock  &trans    &trans         &trans  &mouse_drag_start  &mouse_drag_end  &trans                                      &trans  &mouse_drag_end  &mouse_drag_start  &trans  &trans     &trans   &trans
-&trans               &trans    &trans         &trans  &trans             &trans           &trans                                      &trans  &trans           &trans             &trans  &trans     &trans   &trans
-&trans               &kp HOME  &kp BACKSPACE  &trans  &kp ENTER          &kp END          &trans  &trans  &trans      &trans  &trans  &trans  &kp HOME         &kp BACKSPACE      &trans  &kp ENTER  &kp END  &trans
-&trans               &trans    &trans         &trans  &trans             &trans                           &trans      &trans                  &trans           &trans             &trans  &trans     &trans   &trans
-&trans               &trans    &trans         &trans  &trans                              &trans  &trans  &trans      &trans  &trans  &trans                   &trans             &trans  &trans     &trans   &trans
+&windows_click_lock  &trans    &trans         &trans  &mouse_drag_start  &mouse_drag_end  &trans                                      &trans                     &mouse_drag_end  &mouse_drag_start  &trans  &trans     &trans   &trans
+&trans               &trans    &trans         &trans  &trans             &trans           &trans                                      &trans                     &trans           &trans             &trans  &trans     &trans   &trans
+&trans               &kp HOME  &kp BACKSPACE  &trans  &kp ENTER          &kp END          &trans  &trans  &trans      &trans  &trans  &trans                     &kp HOME         &kp BACKSPACE      &trans  &kp ENTER  &kp END  &trans
+&trans               &trans    &trans         &trans  &trans             &trans                           &trans      &trans                                     &trans           &trans             &trans  &trans     &trans   &trans
+&trans               &trans    &trans         &trans  &trans                              &trans  &trans  &trans      &trans  &trans  &tog_touch_to_click_layer                   &trans             &trans  &trans     &trans   &trans
             >;
         };
 
@@ -365,16 +365,6 @@
             >;
         };
 
-        touch_to_click_layer {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &tog_touch_to_click_layer          &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
         symbol_layer {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans        &trans                &trans                 &trans          &trans           &trans
@@ -392,6 +382,16 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &fw_fname  &fw_lname  &fw_oemail  &fw_phone  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans     &trans     &trans      &trans     &trans
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans     &trans     &trans      &trans     &trans
+            >;
+        };
+
+        touch_to_click_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &tog_touch_to_click_layer          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
