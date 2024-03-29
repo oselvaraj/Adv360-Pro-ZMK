@@ -322,11 +322,11 @@
 
         mirror {
             bindings = <
-&trans  &trans            &trans          &trans             &trans     &trans  &trans                                      &trans  &trans  &trans        &trans                          &trans          &trans                            &trans
-&trans  &trans            &trans          &trans             &trans     &trans  &trans                                      &trans  &trans  &trans        &trans                          &trans          &trans                            &trans
-&trans  &trans            &trans          &trans             &trans     &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans        &trans                          &trans          &trans                            &trans
-&trans  &trans            &trans          &trans             &trans     &trans                  &trans      &trans                  &trans  &trans        &trans                          &trans          &trans                            &trans
-&trans  &kp LEFT_BRACKET  &kp LEFT_ARROW  &kp RIGHT_BRACKET  &kp RIGHT          &trans  &trans  &trans      &trans  &trans  &trans          &kp UP_ARROW  &tap_click_w_drag_alt_tap_caps  &kp DOWN_ARROW  &tap_rclk_2tp_mclk_alt_tap_grave  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
