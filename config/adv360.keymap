@@ -302,11 +302,11 @@
 
         nav_macro_base_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans         &trans  &trans     &trans   &trans                                      &trans  &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &trans    &trans         &trans  &trans     &trans   &trans                                      &trans  &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &kp HOME  &kp BACKSPACE  &trans  &kp ENTER  &kp END  &trans  &trans  &trans      &trans  &trans  &trans  &kp HOME  &kp BACKSPACE  &trans  &kp ENTER  &kp END  &trans
+&trans  &trans    &trans         &trans  &trans     &trans                   &trans      &trans                  &trans    &trans         &trans  &trans     &trans   &trans
+&trans  &trans    &trans         &trans  &trans              &trans  &trans  &trans      &trans  &trans  &trans            &trans         &trans  &trans     &trans   &trans
             >;
         };
 
