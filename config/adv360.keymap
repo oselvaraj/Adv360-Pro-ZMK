@@ -89,7 +89,7 @@
         tap_click_alt_tap_photoshop: tap_click_alt_tap_photoshop {
             compatible = "zmk,behavior-mod-morph";
             label = "TAP_CLICK_ALT_TAP_PHOTOSHOP";
-            bindings = <&mkp MB1>, <&to 12>;
+            bindings = <&mkp MB1>, <&to 13>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
@@ -135,6 +135,22 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             require-prior-idle-ms = <125>;
+        };
+
+        minimize_one_or_all_windows: minimize_one_or_all_windows {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MINIMIZE_ONE_OR_ALL_WINDOWS";
+            #binding-cells = <0>;
+            bindings = <&kp LG(DOWN)>, <&kp LG(M)>;
+        };
+
+        tap_kp_hold_kp: tap_kp_hold_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_KP_HOLD_KP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
         };
     };
 
@@ -287,11 +303,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL                          &kp N1     &kp N2                     &kp N3                     &kp N4                     &kp N5  &tog 1                                                               &mo 3          &kp N6  &kp N7    &kp N8                     &kp N9     &kp N0    &kp MINUS
-&kp ESCAPE                         &kp Q      &kp W                      &kp E                      &kp R                      &kp T   &mo 2                                                                &tog 4         &kp Y   &kp U     &kp I                      &kp O      &kp SQT   &kp BSLH
-&kp TAB                            &kp A      &kp S                      &tap_kp_hold_mo_layer 7 D  &kp F                      &kp G   &trans     &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tog 11        &kp H   &kp J     &tap_kp_hold_mo_layer 6 K  &kp L      &kp P     &kp SEMICOLON
-&kp LEFT_SHIFT                     &kp SLASH  &tap_kp_hold_mo_layer 8 Z  &kp X                      &tap_kp_hold_mo_layer 9 C  &kp V                         &kp PAGE_UP        &kp HOME                                   &kp B   &kp N     &kp M                      &kp COMMA  &kp DOT   &kp RIGHT_SHIFT
-&tap_layer_hold_kp LEFT_CONTROL 6  &kp GRAVE  &kp UP_ARROW               &kp CLCK                   &kp DOWN                           &kp SPACE  &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &kp BACKSPACE          &kp LEFT  &kp LEFT_BRACKET           &kp RIGHT  &kp RBKT  &tap_layer_hold_kp RIGHT_CONTROL 7
+&kp EQUAL                          &kp N1     &kp N2                     &kp N3                     &kp N4                     &kp N5  &tog 1                                                               &mo 3          &kp N6  &kp N7    &kp N8                     &kp N9                              &kp N0    &kp MINUS
+&kp ESCAPE                         &kp Q      &kp W                      &kp E                      &kp R                      &kp T   &mo 2                                                                &tog 4         &kp Y   &kp U     &kp I                      &kp O                               &kp SQT   &kp BSLH
+&kp TAB                            &kp A      &kp S                      &tap_kp_hold_mo_layer 7 D  &kp F                      &kp G   &tog 12    &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tog 11        &kp H   &kp J     &tap_kp_hold_mo_layer 6 K  &kp L                               &kp P     &kp SEMICOLON
+&kp LEFT_SHIFT                     &kp SLASH  &tap_kp_hold_mo_layer 8 Z  &kp X                      &tap_kp_hold_mo_layer 9 C  &kp V                         &kp PAGE_UP        &kp HOME                                   &kp B   &kp N     &kp M                      &tap_kp_hold_kp LEFT_CONTROL COMMA  &kp DOT   &kp RIGHT_SHIFT
+&tap_layer_hold_kp LEFT_CONTROL 6  &kp GRAVE  &kp UP_ARROW               &kp CLCK                   &kp DOWN                           &kp SPACE  &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &kp BACKSPACE          &kp LEFT  &kp LEFT_BRACKET           &kp RIGHT                           &kp RBKT  &tap_layer_hold_kp RIGHT_CONTROL 7
             >;
         };
 
@@ -337,11 +353,11 @@
 
         nav_macro_base_layer {
             bindings = <
-&windows_click_lock  &trans    &trans         &trans  &mouse_drag_start  &mouse_drag_end  &trans                                      &trans  &mouse_drag_end  &mouse_drag_start  &trans  &trans     &trans   &trans
-&trans               &trans    &trans         &trans  &trans             &trans           &trans                                      &trans  &trans           &trans             &trans  &trans     &trans   &trans
-&trans               &kp HOME  &kp BACKSPACE  &trans  &kp ENTER          &kp END          &trans  &trans  &trans      &trans  &trans  &trans  &kp HOME         &kp BACKSPACE      &trans  &kp ENTER  &kp END  &tog_touch_to_click_layer
-&trans               &trans    &trans         &trans  &trans             &trans                           &trans      &trans                  &trans           &trans             &trans  &trans     &trans   &trans
-&trans               &trans    &trans         &trans  &trans                              &trans  &trans  &trans      &trans  &trans  &trans                   &trans             &trans  &trans     &trans   &trans
+&windows_click_lock  &trans      &trans           &trans  &mouse_drag_start  &mouse_drag_end  &trans                                      &trans  &mouse_drag_end  &mouse_drag_start             &trans  &trans      &trans   &trans
+&trans               &trans      &trans           &trans  &trans             &trans           &trans                                      &trans  &trans           &kp LG(UP_ARROW)              &trans  &kp LA(F4)  &trans   &trans
+&trans               &kp HOME    &kp BACKSPACE    &trans  &kp ENTER          &kp END          &trans  &trans  &trans      &trans  &trans  &trans  &kp HOME         &kp BACKSPACE                 &trans  &kp ENTER   &kp END  &tog_touch_to_click_layer
+&trans               &trans      &trans           &trans  &trans             &trans                           &trans      &trans                  &trans           &minimize_one_or_all_windows  &trans  &kp LCMD    &trans   &trans
+&trans               &kp K_MUTE  &kp C_VOLUME_UP  &trans  &kp C_VOLUME_DOWN                   &trans  &trans  &trans      &trans  &trans  &trans                   &trans                        &trans  &trans      &trans   &trans
             >;
         };
 
@@ -405,6 +421,16 @@
             >;
         };
 
+        unchanged_layer {
+            bindings = <
+&kp EQUAL   &kp N1     &kp N2        &kp N3    &kp N4    &kp N5  &tog 1                                                             &mo 3     &kp N6  &kp N7    &kp N8            &kp N9     &kp N0    &kp MINUS
+&kp ESCAPE  &kp Q      &kp W         &kp E     &kp R     &kp T   &kp SCROLLLOCK                                                     &trans    &kp Y   &kp U     &kp I             &kp O      &kp SQT   &kp BSLH
+&kp TAB     &kp A      &kp S         &kp D     &kp F     &kp G   &trans          &kp LCTRL  &kp LALT           &kp LGUI  &kp RCTRL  &trans    &kp H   &kp J     &kp K             &kp L      &kp P     &kp SEMICOLON
+&kp LSHFT   &kp SLASH  &kp Z         &kp X     &kp C     &kp V                              &kp PAGE_UP        &kp HOME                       &kp B   &kp N     &kp M             &kp COMMA  &kp DOT   &kp RSHFT
+&mo 2       &kp GRAVE  &kp UP_ARROW  &kp CAPS  &kp DOWN          &kp SPACE       &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL    &kp BSPC          &kp LEFT  &kp LEFT_BRACKET  &kp RIGHT  &kp RBKT  &mo 2
+            >;
+        };
+
         control_layer {
             bindings = <
 &trans  &fusion_rotate_start  &fusion_rotate_end  &tog 0     &mouse_drag_start  &mouse_drag_end  &trans                                      &trans  &trans    &trans     &trans  &trans          &trans           &trans
@@ -418,8 +444,8 @@
         quick_keys {
             bindings = <
 &trans  &trans     &trans            &trans        &trans        &trans                            &trans                                      &trans                     &trans    &trans         &trans   &trans     &trans   &trans
-&trans  &tog 14    &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans                            &trans                                      &trans                     &trans    &trans         &trans   &trans     &trans   &trans
-&trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &press_togLyrA_rel_togLyrB 14 14  &trans  &trans  &trans      &trans  &trans  &trans                     &kp HOME  &kp BACKSPACE  &tog 14  &kp ENTER  &kp END  &trans
+&trans  &tog 15    &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans                            &trans                                      &trans                     &trans    &trans         &trans   &trans     &trans   &trans
+&trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &press_togLyrA_rel_togLyrB 15 15  &trans  &trans  &trans      &trans  &trans  &trans                     &kp HOME  &kp BACKSPACE  &tog 15  &kp ENTER  &kp END  &trans
 &trans  &kp LC(Y)  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                                         &trans      &trans                                     &trans    &trans         &trans   &trans     &trans   &trans
 &trans  &trans     &trans            &trans        &trans                                          &trans  &trans  &trans      &trans  &trans  &tog_touch_to_click_layer            &trans         &trans   &trans     &trans   &trans
             >;
@@ -428,9 +454,9 @@
         mouse_layer {
             bindings = <
 &trans  &trans   &trans    &trans        &trans     &trans  &trans                                      &trans  &trans     &trans        &trans     &trans     &trans               &trans
-&trans  &tog 15  &trans    &kp UP_ARROW  &trans     &trans  &trans                                      &trans  &trans     &trans        &tog 15    &trans     &trans               &trans
+&trans  &tog 16  &trans    &kp UP_ARROW  &trans     &trans  &trans                                      &trans  &trans     &trans        &tog 16    &trans     &trans               &trans
 &trans  &trans   &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp LC(A)  &kp UP_ARROW  &mkp MB1   &kp DOWN   &tap_rclk_2tap_mclk  &kp ENTER
-&trans  &trans   &trans    &trans        &trans     &trans                  &trans      &trans                  &kp LC(Y)  &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LC(Z)            &tap_tog_layer_hold_mo_layer 15 15
+&trans  &trans   &trans    &trans        &trans     &trans                  &trans      &trans                  &kp LC(Y)  &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LC(Z)            &tap_tog_layer_hold_mo_layer 16 16
 &trans  &trans   &trans    &trans        &trans             &trans  &trans  &trans      &trans  &trans  &trans             &trans        &trans     &trans     &trans               &trans
             >;
         };
@@ -440,28 +466,18 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans            &trans        &trans        &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp LEFT          &kp DOWN      &kp RIGHT     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans            &trans        &trans        &trans  &tap_layer_hold_kp LEFT_SHIFT 15
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans            &trans        &trans        &trans  &tap_layer_hold_kp LEFT_SHIFT 16
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans            &trans        &trans        &trans  &trans
-            >;
-        };
-
-        unchanged_layer {
-            bindings = <
-&kp EQUAL   &kp N1     &kp N2        &kp N3    &kp N4    &kp N5  &tog 1                                                             &mo 3     &kp N6  &kp N7    &kp N8            &kp N9     &kp N0    &kp MINUS
-&kp ESCAPE  &kp Q      &kp W         &kp E     &kp R     &kp T   &to 0                                                              &trans    &kp Y   &kp U     &kp I             &kp O      &kp SQT   &kp BSLH
-&kp TAB     &kp A      &kp S         &kp D     &kp F     &kp G   &kp SCROLLLOCK  &kp LCTRL  &kp LALT           &kp LGUI  &kp RCTRL  &trans    &kp H   &kp J     &kp K             &kp L      &kp P     &kp SEMICOLON
-&kp LSHFT   &kp SLASH  &kp Z         &kp X     &kp C     &kp V                              &kp PAGE_UP        &kp HOME                       &kp B   &kp N     &kp M             &kp COMMA  &kp DOT   &kp RSHFT
-&mo 2       &kp GRAVE  &kp UP_ARROW  &kp CAPS  &kp DOWN          &kp SPACE       &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL    &kp BSPC          &kp LEFT  &kp LEFT_BRACKET  &kp RIGHT  &kp RBKT  &mo 2
             >;
         };
 
         default_layer_backup {
             bindings = <
 &kp EQUAL                           &kp N1                            &kp N2        &kp N3                          &kp N4    &kp N5  &tog 1                                                                                      &mo 3                               &kp N6  &kp N7    &kp N8                       &kp N9     &kp N0    &kp MINUS
-&kp ESCAPE                          &kp Q                             &kp W         &kp E                           &kp R     &kp T   &tap_rclk_2tap_mclk_alt_tap_dtop                                                            &tap_rclk_2tap_mclk                 &kp Y   &kp U     &tap_kp_hold_tog_layer 15 I  &kp O      &kp SQT   &kp BSLH
-&kp TAB                             &kp A                             &kp S         &kp D                           &kp F     &kp G   &tap_click_alt_tap_tabs           &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tap_click_alt_tap_photoshop        &kp H   &kp J     &tap_kp_hold_mo_layer 14 K   &kp L      &kp P     &kp SEMICOLON
-&tap_layer_hold_kp LEFT_SHIFT 4     &kp SLASH                         &kp Z         &kp X                           &kp C     &kp V                                                &kp PAGE_UP        &kp HOME                                                        &kp B   &kp N     &tap_kp_hold_tog_layer 15 M  &kp COMMA  &kp DOT   &kt RIGHT_SHIFT
-&tap_layer_hold_kp LEFT_CONTROL 14  &tap_rclk_2tp_mclk_alt_tap_grave  &kp UP_ARROW  &tap_click_w_drag_alt_tap_caps  &kp DOWN          &kp SPACE                         &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &tap_kp_hold_mo_layer 15 BACKSPACE          &kp LEFT  &kp LEFT_BRACKET             &kp RIGHT  &kp RBKT  &mo 2
+&kp ESCAPE                          &kp Q                             &kp W         &kp E                           &kp R     &kp T   &tap_rclk_2tap_mclk_alt_tap_dtop                                                            &tap_rclk_2tap_mclk                 &kp Y   &kp U     &tap_kp_hold_tog_layer 16 I  &kp O      &kp SQT   &kp BSLH
+&kp TAB                             &kp A                             &kp S         &kp D                           &kp F     &kp G   &tap_click_alt_tap_tabs           &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tap_click_alt_tap_photoshop        &kp H   &kp J     &tap_kp_hold_mo_layer 15 K   &kp L      &kp P     &kp SEMICOLON
+&tap_layer_hold_kp LEFT_SHIFT 4     &kp SLASH                         &kp Z         &kp X                           &kp C     &kp V                                                &kp PAGE_UP        &kp HOME                                                        &kp B   &kp N     &tap_kp_hold_tog_layer 16 M  &kp COMMA  &kp DOT   &kt RIGHT_SHIFT
+&tap_layer_hold_kp LEFT_CONTROL 15  &tap_rclk_2tp_mclk_alt_tap_grave  &kp UP_ARROW  &tap_click_w_drag_alt_tap_caps  &kp DOWN          &kp SPACE                         &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &tap_kp_hold_mo_layer 16 BACKSPACE          &kp LEFT  &kp LEFT_BRACKET             &kp RIGHT  &kp RBKT  &mo 2
             >;
         };
 
