@@ -152,6 +152,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        tap_kp_hold_sk: tap_kp_hold_sk {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_KP_HOLD_SK";
+            bindings = <&sk>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <350>;
+        };
     };
 
     macros {
@@ -303,11 +312,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL                          &kp N1     &kp N2                     &kp N3                     &kp N4                     &kp N5  &tog 1                                                               &mo 3          &kp N6  &kp N7    &kp N8                     &kp N9                              &kp N0    &kp MINUS
-&kp ESCAPE                         &kp Q      &kp W                      &kp E                      &kp R                      &kp T   &mo 2                                                                &tog 4         &kp Y   &kp U     &kp I                      &kp O                               &kp SQT   &kp BSLH
-&kp TAB                            &kp A      &kp S                      &tap_kp_hold_mo_layer 7 D  &kp F                      &kp G   &tog 12    &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tog 11        &kp H   &kp J     &tap_kp_hold_mo_layer 6 K  &kp L                               &kp P     &kp SEMICOLON
-&kp LEFT_SHIFT                     &kp SLASH  &tap_kp_hold_mo_layer 8 Z  &kp X                      &tap_kp_hold_mo_layer 9 C  &kp V                         &kp PAGE_UP        &kp HOME                                   &kp B   &kp N     &kp M                      &tap_kp_hold_kp LEFT_CONTROL COMMA  &kp DOT   &kp RIGHT_SHIFT
-&tap_layer_hold_kp LEFT_CONTROL 6  &kp GRAVE  &kp UP_ARROW               &kp CLCK                   &kp DOWN                           &kp SPACE  &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &kp BACKSPACE          &kp LEFT  &kp LEFT_BRACKET           &kp RIGHT                           &kp RBKT  &tap_layer_hold_kp RIGHT_CONTROL 7
+&kp EQUAL                          &kp N1     &kp N2                     &kp N3                     &kp N4                     &kp N5  &tog 1                                                               &mo 3          &kp N6  &kp N7    &kp N8                     &kp N9                              &kp N0                          &kp MINUS
+&kp ESCAPE                         &kp Q      &kp W                      &kp E                      &kp R                      &kp T   &mo 2                                                                &tog 4         &kp Y   &kp U     &kp I                      &kp O                               &kp SQT                         &kp BSLH
+&kp TAB                            &kp A      &kp S                      &tap_kp_hold_mo_layer 7 D  &kp F                      &kp G   &tog 12    &kp LCTRL  &kp LALT           &kp LGUI  &sk LEFT_CONTROL  &tog 11        &kp H   &kp J     &tap_kp_hold_mo_layer 6 K  &kp L                               &tap_kp_hold_sk LC(LEFT_ALT) P  &kp SEMICOLON
+&kp LEFT_SHIFT                     &kp SLASH  &tap_kp_hold_mo_layer 8 Z  &kp X                      &tap_kp_hold_mo_layer 9 C  &kp V                         &kp PAGE_UP        &kp HOME                                   &kp B   &kp N     &kp M                      &tap_kp_hold_kp LEFT_CONTROL COMMA  &kp DOT                         &kp RIGHT_SHIFT
+&tap_layer_hold_kp LEFT_CONTROL 6  &kp GRAVE  &kp UP_ARROW               &kp CLCK                   &kp DOWN                           &kp SPACE  &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL           &kp BACKSPACE          &kp LEFT  &kp LEFT_BRACKET           &kp RIGHT                           &kp RBKT                        &tap_layer_hold_kp RIGHT_CONTROL 7
             >;
         };
 
@@ -353,11 +362,11 @@
 
         nav_macro_base_layer {
             bindings = <
-&windows_click_lock  &trans      &trans           &trans  &mouse_drag_start  &mouse_drag_end  &trans                                      &trans  &mouse_drag_end  &mouse_drag_start             &trans  &trans      &trans   &trans
-&trans               &trans      &trans           &trans  &trans             &trans           &trans                                      &trans  &trans           &kp LG(UP_ARROW)              &trans  &kp LA(F4)  &trans   &trans
-&trans               &kp HOME    &kp BACKSPACE    &trans  &kp ENTER          &kp END          &trans  &trans  &trans      &trans  &trans  &trans  &kp HOME         &kp BACKSPACE                 &trans  &kp ENTER   &kp END  &tog_touch_to_click_layer
-&trans               &trans      &trans           &trans  &trans             &trans                           &trans      &trans                  &trans           &minimize_one_or_all_windows  &trans  &kp LCMD    &trans   &trans
-&trans               &kp K_MUTE  &kp C_VOLUME_UP  &trans  &kp C_VOLUME_DOWN                   &trans  &trans  &trans      &trans  &trans  &trans                   &trans                        &trans  &trans      &trans   &trans
+&windows_click_lock  &trans    &trans         &trans  &mouse_drag_start  &mouse_drag_end  &kp C_MUTE                                             &trans  &mouse_drag_end  &mouse_drag_start             &trans  &trans      &trans   &trans
+&trans               &trans    &trans         &trans  &trans             &trans           &kp C_VOLUME_UP                                        &trans  &trans           &kp LG(UP_ARROW)              &trans  &kp LA(F4)  &trans   &trans
+&trans               &kp HOME  &kp BACKSPACE  &trans  &kp ENTER          &kp END          &kp C_VOLUME_DOWN  &trans  &trans      &trans  &trans  &trans  &kp HOME         &kp BACKSPACE                 &trans  &kp ENTER   &kp END  &tog_touch_to_click_layer
+&trans               &trans    &trans         &trans  &trans             &trans                                      &trans      &trans                  &trans           &minimize_one_or_all_windows  &trans  &kp LCMD    &trans   &trans
+&trans               &trans    &trans         &trans  &trans                              &trans             &trans  &trans      &trans  &trans  &trans                   &trans                        &trans  &trans      &trans   &trans
             >;
         };
 
