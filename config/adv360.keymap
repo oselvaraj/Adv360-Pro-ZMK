@@ -150,7 +150,8 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
+            flavor = "tap-preferred";
         };
 
         tap_kp_hold_sk: tap_kp_hold_sk {
@@ -160,6 +161,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <350>;
+            flavor = "tap-preferred";
         };
     };
 
