@@ -337,11 +337,11 @@
 
         nav_macro_base_layer {
             bindings = <
-&windows_click_lock  &trans    &trans         &trans  &mouse_drag_start  &mouse_drag_end  &trans                                      &trans                     &mouse_drag_end  &mouse_drag_start  &trans  &trans     &trans   &trans
-&trans               &trans    &trans         &trans  &trans             &trans           &trans                                      &trans                     &trans           &trans             &trans  &trans     &trans   &trans
-&trans               &kp HOME  &kp BACKSPACE  &trans  &kp ENTER          &kp END          &trans  &trans  &trans      &trans  &trans  &trans                     &kp HOME         &kp BACKSPACE      &trans  &kp ENTER  &kp END  &trans
-&trans               &trans    &trans         &trans  &trans             &trans                           &trans      &trans                                     &trans           &trans             &trans  &trans     &trans   &trans
-&trans               &trans    &trans         &trans  &trans                              &trans  &trans  &trans      &trans  &trans  &tog_touch_to_click_layer                   &trans             &trans  &trans     &trans   &trans
+&windows_click_lock  &trans    &trans         &trans  &mouse_drag_start  &mouse_drag_end  &trans                                      &trans  &mouse_drag_end  &mouse_drag_start  &trans  &trans     &trans   &trans
+&trans               &trans    &trans         &trans  &trans             &trans           &trans                                      &trans  &trans           &trans             &trans  &trans     &trans   &trans
+&trans               &kp HOME  &kp BACKSPACE  &trans  &kp ENTER          &kp END          &trans  &trans  &trans      &trans  &trans  &trans  &kp HOME         &kp BACKSPACE      &trans  &kp ENTER  &kp END  &tog_touch_to_click_layer
+&trans               &trans    &trans         &trans  &trans             &trans                           &trans      &trans                  &trans           &trans             &trans  &trans     &trans   &trans
+&trans               &trans    &trans         &trans  &trans                              &trans  &trans  &trans      &trans  &trans  &trans                   &trans             &trans  &trans     &trans   &trans
             >;
         };
 
@@ -357,11 +357,11 @@
 
         nav_keys_right_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans     &trans            &trans        &trans        &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp LC(A)  &kp LEFT          &kp DOWN      &kp RIGHT     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp LC(V)  &kp LC(C)         &kp LC(X)     &kp LC(Z)     &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans             &trans            &trans        &kp LC(Y)     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans     &trans            &trans        &trans        &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans     &kp LEFT          &kp DOWN      &kp RIGHT     &kp LC(A)  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp LC(V)  &kp LC(C)         &kp LC(X)     &kp LC(Z)     &trans     &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans             &trans            &trans        &kp LC(Y)     &trans     &trans
             >;
         };
 
@@ -387,11 +387,11 @@
 
         touch_to_click_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &tog_touch_to_click_layer          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &tog_touch_to_click_layer
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
