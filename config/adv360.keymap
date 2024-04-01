@@ -229,7 +229,7 @@
         tog_touch_to_click_layer: tog_touch_to_click_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 10 &mkp MB4>;
+            bindings = <&tog 10 &mkp MB5>;
             label = "TOG_TOUCH_TO_CLICK_LAYER";
         };
 
