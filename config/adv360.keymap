@@ -183,6 +183,16 @@
             flavor = "tap-preferred";
             require-prior-idle-ms = <125>;
         };
+
+        tap_kp_hold_numpad: tap_kp_hold_numpad {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_KP_HOLD_NUMPAD";
+            bindings = <&go_to_num_pad_layer>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            flavor = "tap-preferred";
+        };
     };
 
     macros {
@@ -287,6 +297,23 @@
             bindings = <&kp N5 &kp N5 &kp N1 &kp N2 &kp N2 &kp N9 &kp N7 &kp N3 &kp N3 &kp N8>;
             label = "FW_PHONE";
         };
+
+        go_to_num_pad_layer: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp KP_NLCK>,
+                <&macro_press>,
+                <&mo 1>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 1>,
+                <&macro_tap>,
+                <&kp KP_NUMLOCK>;
+
+            label = "NEW_MACRO";
+        };
     };
 
     combos {
@@ -334,11 +361,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL                          &kp N1                                &kp N2                     &kp N3                     &kp N4                      &kp N5                     &tog 1                                                                &mo 3          &kp N6                      &kp N7    &kp N8                     &kp N9                              &kp N0                          &kp MINUS
-&kp ESCAPE                         &kp Q                                 &kp W                      &kp E                      &kp R                       &kp T                      &mo 2                                                                 &tog 4         &kp Y                       &kp U     &kp I                      &kp O                               &kp SQT                         &kp BSLH
-&kp TAB                            &kp A                                 &kp S                      &tap_kp_hold_mo_layer 7 D  &kp F                       &kp G                      &tog 13    &kp LCTRL  &kp LALT           &kp LGUI  &kp RIGHT_CONTROL  &tog 12        &kp H                       &kp J     &tap_kp_hold_mo_layer 6 K  &kp L                               &tap_kp_hold_kp LC(LEFT_ALT) P  &kp SEMICOLON
-&kp LEFT_SHIFT                     &tp_qstn_shift_tp_slsh_hld_layer 9 0  &tap_kp_hold_mo_layer 8 Z  &tap_kp_hold_mo_layer 6 X  &tap_kp_hold_mo_layer 10 C  &tap_kp_hold_mo_layer 1 V                        &kp PAGE_UP        &kp HOME                                    &tap_kp_hold_kp LEFT_GUI B  &kp N     &tap_kp_hold_mo_layer 7 M  &tap_kp_hold_kp LEFT_CONTROL COMMA  &kp DOT                         &kp RIGHT_SHIFT
-&tap_layer_hold_kp LEFT_CONTROL 6  &kp GRAVE                             &kp UP_ARROW               &kp CLCK                   &kp DOWN                                               &kp SPACE  &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL            &kp BACKSPACE                              &kp LEFT  &kp LEFT_BRACKET           &kp RIGHT                           &kp RBKT                        &tap_layer_hold_kp RIGHT_CONTROL 7
+&kp EQUAL                          &kp N1                                &kp N2                     &kp N3                     &kp N4                      &kp N5                   &tog 1                                                                &mo 3          &kp N6                      &kp N7    &kp N8                     &kp N9                              &kp N0                          &kp MINUS
+&kp ESCAPE                         &kp Q                                 &kp W                      &kp E                      &kp R                       &kp T                    &mo 2                                                                 &tog 4         &kp Y                       &kp U     &kp I                      &kp O                               &kp SQT                         &kp BSLH
+&kp TAB                            &kp A                                 &kp S                      &tap_kp_hold_mo_layer 7 D  &kp F                       &kp G                    &tog 13    &kp LCTRL  &kp LALT           &kp LGUI  &kp RIGHT_CONTROL  &tog 12        &kp H                       &kp J     &tap_kp_hold_mo_layer 6 K  &kp L                               &tap_kp_hold_kp LC(LEFT_ALT) P  &kp SEMICOLON
+&kp LEFT_SHIFT                     &tp_qstn_shift_tp_slsh_hld_layer 9 0  &tap_kp_hold_mo_layer 8 Z  &tap_kp_hold_mo_layer 6 X  &tap_kp_hold_mo_layer 10 C  &tap_kp_hold_numpad 0 V                        &kp PAGE_UP        &kp HOME                                    &tap_kp_hold_kp LEFT_GUI B  &kp N     &tap_kp_hold_mo_layer 7 M  &tap_kp_hold_kp LEFT_CONTROL COMMA  &kp DOT                         &kp RIGHT_SHIFT
+&tap_layer_hold_kp LEFT_CONTROL 6  &kp GRAVE                             &kp UP_ARROW               &kp CLCK                   &kp DOWN                                             &kp SPACE  &kp ENTER  &kp PAGE_DOWN      &kp END   &kp DEL            &kp BACKSPACE                              &kp LEFT  &kp LEFT_BRACKET           &kp RIGHT                           &kp RBKT                        &tap_layer_hold_kp RIGHT_CONTROL 7
             >;
         };
 
