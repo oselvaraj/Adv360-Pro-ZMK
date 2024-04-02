@@ -394,21 +394,21 @@
 
         nav_keys_left_layer {
             bindings = <
-&trans  &trans  &trans            &trans        &trans        &trans     &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans     &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LEFT          &kp DOWN      &kp RIGHT     &trans     &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LC(Y)         &trans        &trans                   &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans            &trans        &trans        &trans                          &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &press_togLyrA_rel_togLyrB 6 6  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LEFT          &kp DOWN      &kp RIGHT     &trans                          &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LC(Z)         &kp LC(X)     &kp LC(C)     &kp LC(V)                                       &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LC(Y)         &trans        &trans                                        &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         nav_keys_right_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans     &trans            &trans        &trans        &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans     &kp LEFT          &kp DOWN      &kp RIGHT     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp LC(V)  &kp LC(C)         &kp LC(X)     &kp LC(Z)     &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans             &trans            &trans        &kp LC(Y)     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans                          &trans            &trans        &trans        &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &press_togLyrA_rel_togLyrB 7 7  &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans                          &kp LEFT          &kp DOWN      &kp RIGHT     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp LC(V)                       &kp LC(C)         &kp LC(X)     &kp LC(Z)     &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans                                  &trans            &trans        &kp LC(Y)     &trans  &trans
             >;
         };
 
@@ -424,11 +424,11 @@
 
         symbol_layer_2 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans     &trans      &trans      &trans      &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &kp FSLH   &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp BSLH  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp TILDE  &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp PIPE  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp GRAVE  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &trans    &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans             &trans      &kp LS(N0)  &trans      &trans    &trans
             >;
         };
 
@@ -472,7 +472,7 @@
             >;
         };
 
-        control_layer {
+        ref_control_layer {
             bindings = <
 &trans  &fusion_rotate_start  &fusion_rotate_end  &tog 0     &mouse_drag_start  &mouse_drag_end  &trans                                      &trans  &trans    &trans     &trans  &trans          &trans           &trans
 &trans  &trans                &trans              &trans     &kp SCROLLLOCK     &kp UP_ARROW     &trans                                      &trans  &kp UP    &kp LC(Y)  &trans  &kp LC(O)       &trans           &trans
@@ -482,7 +482,7 @@
             >;
         };
 
-        quick_keys {
+        ref_quick_keys {
             bindings = <
 &trans  &trans     &trans            &trans        &trans        &trans                            &trans                                      &trans                     &trans    &trans         &trans   &trans     &trans   &trans
 &trans  &tog 16    &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans                            &trans                                      &trans                     &trans    &trans         &trans   &trans     &trans   &trans
@@ -492,7 +492,7 @@
             >;
         };
 
-        mouse_layer {
+        ref_mouse_layer {
             bindings = <
 &trans  &trans   &trans    &trans        &trans     &trans  &trans                                      &trans  &trans     &trans        &trans     &trans     &trans               &trans
 &trans  &tog 17  &trans    &kp UP_ARROW  &trans     &trans  &trans                                      &trans  &trans     &trans        &tog 17    &trans     &trans               &trans
@@ -502,7 +502,7 @@
             >;
         };
 
-        right_hand_navigation {
+        ref_right_hand_navigation {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans            &trans        &trans        &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans  &trans
@@ -512,7 +512,7 @@
             >;
         };
 
-        default_layer_backup {
+        ref_default_layer_backup {
             bindings = <
 &kp EQUAL                           &kp N1                            &kp N2        &kp N3                          &kp N4    &kp N5  &tog 1                                                                                      &mo 3                               &kp N6  &kp N7    &kp N8                       &kp N9     &kp N0    &kp MINUS
 &kp ESCAPE                          &kp Q                             &kp W         &kp E                           &kp R     &kp T   &tap_rclk_2tap_mclk_alt_tap_dtop                                                            &tap_rclk_2tap_mclk                 &kp Y   &kp U     &tap_kp_hold_tog_layer 17 I  &kp O      &kp SQT   &kp BSLH
@@ -522,7 +522,7 @@
             >;
         };
 
-        nav_keys_template {
+        ref_nav_keys_template {
             bindings = <
 &trans  &trans     &trans            &trans        &trans        &trans     &trans                                      &trans  &trans     &trans            &trans        &trans        &trans     &trans
 &trans  &trans     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans     &trans                                      &trans  &trans     &kp LC(UP_ARROW)  &kp UP_ARROW  &kp LC(DOWN)  &trans     &trans
